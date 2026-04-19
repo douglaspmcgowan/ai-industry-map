@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Hosting & Inference — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Model Hosting</div>
+  <h1>Model Hosting / Inference</h1>
+  <p class="lead">Providers that run open-weights (Llama, Qwen, DeepSeek, Mistral) and custom models as managed APIs. The frontier labs host their own models; this category hosts <em>everyone else's</em>. Split into general-purpose, cold-start-specialist, and custom-silicon providers.</p>
+
+  <div class="comp-list">
+
+    <div class="comp" id="replicate">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=replicate.com&sz=128" alt="Replicate"></div>
+        <div class="comp-title"><h3>Replicate</h3><div class="maker">Replicate · founded 2019</div></div>
+        <div class="comp-tags"><span class="tag">General-purpose</span><span class="tag">Cog</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> "One API for every open-source model." Huge catalog (text, image, video, audio, custom). Cog (their container format) is the standard way to package models for deployment.</p>
+        <p><strong>What sets it apart.</strong> Breadth of models — if it's on Hugging Face, it's probably on Replicate. Pay-per-prediction pricing.</p>
+        <p><strong>Connections.</strong> Cog is open-source. Broad use among creators / hobbyists for image + video models.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hundreds of thousands of developers; strong creator community</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Widest model catalog, creator-friendly</div></div>
+        </div>
+        <div class="comp-links"><a href="https://replicate.com">replicate.com</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="together">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=together.ai&sz=128" alt="Together"></div>
+        <div class="comp-title"><h3>Together AI</h3><div class="maker">Together · CEO Vipul Ved Prakash</div></div>
+        <div class="comp-tags"><span class="tag">LLM inference</span><span class="tag">Training too</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Fast inference for open-weights LLMs (Llama, Qwen, DeepSeek, Mistral). Also offers fine-tuning, dedicated endpoints, and training.</p>
+        <p><strong>What sets it apart.</strong> Competitive pricing, open model catalog, FlashAttention-like custom optimizations. Popular drop-in replacement for people who want Llama-class quality without hosting it themselves.</p>
+        <p><strong>Connections.</strong> Funded by Nvidia, Salesforce Ventures. Co-published RedPajama open-dataset work.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hundreds of millions of API calls per month; growing fast</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Best combo of pricing + open-model breadth</div></div>
+        </div>
+        <div class="comp-links"><a href="https://together.ai">together.ai</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="fireworks">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128" alt="Fireworks"></div>
+        <div class="comp-title"><h3>Fireworks AI</h3><div class="maker">Fireworks · founded by ex-Meta PyTorch leads</div></div>
+        <div class="comp-tags"><span class="tag">Fast inference</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> LLM inference with strong focus on latency + throughput. Popular for production Llama / Qwen / DeepSeek workloads. Also offers fine-tuning (LoRA + full) and custom deployments.</p>
+        <p><strong>What sets it apart.</strong> Founded by former Meta PyTorch team → deep kernel optimization expertise. Popular with enterprises needing predictable p99 latency.</p>
+        <p><strong>Connections.</strong> Tight partnerships with Meta (Llama) and Nvidia.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Strong enterprise adoption for LLM inference</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Low-latency production inference</div></div>
+        </div>
+        <div class="comp-links"><a href="https://fireworks.ai">fireworks.ai</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="modal">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=modal.com&sz=128" alt="Modal"></div>
+        <div class="comp-title"><h3>Modal</h3><div class="maker">Modal Labs · CEO Erik Bernhardsson (ex-Spotify, author of luigi + annoy)</div></div>
+        <div class="comp-tags"><span class="tag">Serverless GPUs</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Serverless cloud for Python + ML. Decorate a function with `@app.function(gpu="A100")` and it runs on a remote GPU on demand. Great for custom model serving + batch inference.</p>
+        <p><strong>What sets it apart.</strong> Cold starts under a second even for GPU containers — famously hard problem solved elegantly. Python-native developer experience. Popular for one-off ML jobs + custom model endpoints.</p>
+        <p><strong>Connections.</strong> Spotify heritage via Bernhardsson. Popular with research teams and indie ML developers.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Tens of thousands of developers; beloved in Python ML circles</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Custom model endpoints + Python batch jobs</div></div>
+        </div>
+        <div class="comp-links"><a href="https://modal.com">modal.com</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="baseten">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=baseten.co&sz=128" alt="Baseten"></div>
+        <div class="comp-title"><h3>Baseten</h3><div class="maker">Baseten · founded 2019</div></div>
+        <div class="comp-tags"><span class="tag">Custom deployments</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Managed model serving for custom / fine-tuned models. "Truss" is their open-source packaging format. Focus: reliable production deployments with good observability.</p>
+        <p><strong>What sets it apart.</strong> Strong story for enterprises with their own trained models who want managed infra without building it. Sits between Replicate (hobbyist) and the hyperscalers.</p>
+        <p><strong>Connections.</strong> Used by Writer, Descript, Patreon for ML serving.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Mid-market and enterprise ML teams</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Custom-model production serving with hand-holding</div></div>
+        </div>
+        <div class="comp-links"><a href="https://baseten.co">baseten.co</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="groq">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=groq.com&sz=128" alt="Groq"></div>
+        <div class="comp-title"><h3>Groq</h3><div class="maker">Groq · founded 2016 by Jonathan Ross (ex-Google TPU)</div></div>
+        <div class="comp-tags"><span class="tag">Custom silicon</span><span class="tag">Ultra-fast</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Inference on Groq's custom LPU (Language Processing Unit) chips. Delivers the fastest tokens-per-second for open-weights LLMs available anywhere.</p>
+        <p><strong>What sets it apart.</strong> Hundreds of tokens/second on Llama 70B-class models — demos feel instant, like reading a file. Founder invented the Google TPU.</p>
+        <p><strong>Connections.</strong> Often confused with Elon Musk's xAI Grok. Has a Saudi sovereign deal for regional deployment.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Popular for real-time voice agents + interactive UIs</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Lowest-latency inference in the industry</div></div>
+        </div>
+        <div class="comp-links"><a href="https://groq.com">groq.com</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="cerebras">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cerebras.net&sz=128" alt="Cerebras"></div>
+        <div class="comp-title"><h3>Cerebras</h3><div class="maker">Cerebras · founded 2016 · CEO Andrew Feldman</div></div>
+        <div class="comp-tags"><span class="tag">Custom silicon</span><span class="tag">Wafer-scale</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Custom wafer-scale chip (a single chip the size of a dinner plate). Runs inference on open-weights LLMs at speeds competitive with Groq.</p>
+        <p><strong>What sets it apart.</strong> Only company shipping wafer-scale compute. Used by Glean, Meta, and the US national labs for high-throughput inference + training. Filed for IPO in 2024.</p>
+        <p><strong>Connections.</strong> Rivalry with Groq for "fastest inference" mindshare. Different tech bet (wafer-scale vs. custom SRAM LPU).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Larger enterprise contracts than Groq on average; smaller hobbyist mindshare</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Enterprise-scale fast inference + training</div></div>
+        </div>
+        <div class="comp-links"><a href="https://cerebras.net">cerebras.net</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="runpod">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=runpod.io&sz=128" alt="RunPod"></div>
+        <div class="comp-title"><h3>RunPod</h3><div class="maker">RunPod</div></div>
+        <div class="comp-tags"><span class="tag">Raw GPU rental</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Raw GPU cloud — rent H100s, A100s, L40s by the hour for training, fine-tuning, or custom inference. Also offers serverless GPU mode.</p>
+        <p><strong>What sets it apart.</strong> Cheapest GPU hour prices of any "real" cloud. Two-tier: "Community Cloud" (cheaper, less reliable) vs "Secure Cloud" (enterprise SLA). Huge with indie ML researchers.</p>
+        <p><strong>Connections.</strong> Alternative to Vast.ai, Lambda Labs, Paperspace.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Massive indie + research adoption; the "cheap GPU" default</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Raw GPU rental / training on a budget</div></div>
+        </div>
+        <div class="comp-links"><a href="https://runpod.io">runpod.io</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

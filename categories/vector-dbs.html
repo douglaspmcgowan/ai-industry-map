@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vector Databases — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Vector Databases</div>
+  <h1>Vector Databases</h1>
+  <p class="lead">Storage for embeddings — the numeric fingerprints of text/images/audio that power semantic search and retrieval-augmented generation (RAG). The field split in 2023 between "dedicated vector DBs" and "Postgres extensions that do it natively." Both are viable; the choice depends on scale and ops preference.</p>
+  <div class="note"><strong>Where this sits in the stack.</strong> Your agent needs to "remember" a document corpus or knowledge base. You embed each chunk → store in a vector DB → query with a user-message embedding → get top-k chunks → stuff into the LLM prompt. That's RAG.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="pinecone">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=pinecone.io&sz=128" alt="Pinecone"></div>
+        <div class="comp-title"><h3>Pinecone</h3><div class="maker">Pinecone · founded 2019 · CEO Edo Liberty</div></div>
+        <div class="comp-tags"><span class="tag">Managed</span><span class="tag">Category leader</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The original managed vector DB. Fully hosted, serverless mode, enterprise-grade. Launched the category in 2019 and defined the API most alternatives copied.</p>
+        <p><strong>What sets it apart.</strong> Serverless pricing (pay per query, not per pod) makes it the easiest managed option for getting started. Largest enterprise customer base. Edo Liberty co-wrote the original vector-search research at Yahoo / AWS SageMaker.</p>
+        <p><strong>Connections.</strong> Named in nearly every LangChain / LlamaIndex tutorial. Raised $100M Series B 2023.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Most-adopted managed vector DB</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Managed, serverless, enterprise-ready</div></div>
+        </div>
+        <div class="comp-links"><a href="https://pinecone.io">pinecone.io</a><a href="https://docs.pinecone.io">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="weaviate">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=weaviate.io&sz=128" alt="Weaviate"></div>
+        <div class="comp-title"><h3>Weaviate</h3><div class="maker">Weaviate · Amsterdam</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Multimodal</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Open-source vector DB with native multimodal support, built-in vectorization modules (you pass text, Weaviate embeds it), and hybrid BM25+vector search.</p>
+        <p><strong>What sets it apart.</strong> Weaviate Cloud (hosted) + self-hostable in a container. Hybrid search out of the box. Strong European customer base.</p>
+        <p><strong>Connections.</strong> Ecosystem partner with Cohere, OpenAI, Hugging Face for embedding models. Named in most RAG tutorials alongside Pinecone.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~11K GitHub stars; popular OSS choice</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Multimodal + hybrid search + self-host option</div></div>
+        </div>
+        <div class="comp-links"><a href="https://weaviate.io">weaviate.io</a><a href="https://github.com/weaviate/weaviate">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="qdrant">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=qdrant.tech&sz=128" alt="Qdrant"></div>
+        <div class="comp-title"><h3>Qdrant</h3><div class="maker">Qdrant · Berlin</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Rust</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Rust-written vector DB with a focus on filtering + hybrid search. Self-hostable single binary or Qdrant Cloud.</p>
+        <p><strong>What sets it apart.</strong> Fastest pure performance benchmarks in the category, thanks to Rust. Good payload-filtering (i.e. "vector search but only in documents written after 2024"). Free tier has no row cap.</p>
+        <p><strong>Connections.</strong> Used by OpenAI (internal), GitHub Copilot, X (Grok memory), and many LLM apps via LangChain.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~22K GitHub stars; strong growth 2024–2025</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Performance + filtering</div></div>
+        </div>
+        <div class="comp-links"><a href="https://qdrant.tech">qdrant.tech</a><a href="https://github.com/qdrant/qdrant">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="chroma">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=trychroma.com&sz=128" alt="Chroma"></div>
+        <div class="comp-title"><h3>Chroma</h3><div class="maker">Chroma · founded by Jeff Huber & Anton Troynikov</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Local-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Lightweight Python-native vector DB. `pip install chromadb` and go. Designed for prototyping, notebooks, and small production workloads. Chroma Cloud adds managed hosting.</p>
+        <p><strong>What sets it apart.</strong> Easiest onboarding of any vector DB — you can have a working RAG demo in 10 lines. Favorite for local dev + quick prototypes.</p>
+        <p><strong>Connections.</strong> Default vector DB in most LangChain "getting started" tutorials. YC backed.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~17K GitHub stars; most-used for tutorials + prototypes</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Simplicity, Python-native</div></div>
+        </div>
+        <div class="comp-links"><a href="https://trychroma.com">trychroma.com</a><a href="https://github.com/chroma-core/chroma">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="milvus">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=zilliz.com&sz=128" alt="Milvus"></div>
+        <div class="comp-title"><h3>Milvus (+ Zilliz Cloud)</h3><div class="maker">Zilliz · founded 2017</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Scale</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Distributed, cloud-native vector DB designed for billion-scale collections. Open source; Zilliz Cloud is the managed version.</p>
+        <p><strong>What sets it apart.</strong> Scale. Where Pinecone and Chroma handle millions of vectors, Milvus is built for billions — search engines, multimedia catalogs, recommendation systems.</p>
+        <p><strong>Connections.</strong> Part of the LF AI & Data foundation. Powers vector search at Walmart, Nvidia, and others.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~30K GitHub stars; largest OSS vector DB by deployment count</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Billion-vector scale + distributed architecture</div></div>
+        </div>
+        <div class="comp-links"><a href="https://milvus.io">milvus.io</a><a href="https://github.com/milvus-io/milvus">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="pgvector">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=postgresql.org&sz=128" alt="pgvector"></div>
+        <div class="comp-title"><h3>pgvector (Postgres)</h3><div class="maker">Andrew Kane · open source</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Postgres</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Postgres extension that adds vector types and HNSW / IVFFlat indexing. Turn any Postgres database into a vector DB with one `CREATE EXTENSION`.</p>
+        <p><strong>What sets it apart.</strong> Reuses your existing Postgres — same backup, same auth, same ops, same transactions. The "don't need another database" pitch killed many dedicated vector-DB pitches in 2024–2025. Supabase and Neon ship it by default.</p>
+        <p><strong>Connections.</strong> Default vector store in Supabase, Neon, Tembo, AWS RDS Postgres, and most managed-Postgres offerings.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Most-deployed vector storage globally (by virtue of Postgres ubiquity)</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">No new database, transactional, familiar SQL</div></div>
+        </div>
+        <div class="comp-links"><a href="https://github.com/pgvector/pgvector">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="turbopuffer">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=turbopuffer.com&sz=128" alt="Turbopuffer"></div>
+        <div class="comp-title"><h3>Turbopuffer</h3><div class="maker">founded by Simon Hørup Eskildsen (ex-Shopify)</div></div>
+        <div class="comp-tags"><span class="tag">Serverless</span><span class="tag">Object-storage-native</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Serverless vector + full-text search built on S3-style object storage. Optimizes for cost at "many namespaces × few queries each" — the common pattern for per-user AI apps.</p>
+        <p><strong>What sets it apart.</strong> Orders of magnitude cheaper than Pinecone when you have millions of small tenants. Used by Notion, Cursor, Linear for AI features. Darling of the AI-infra twitter crowd.</p>
+        <p><strong>Connections.</strong> Used by Cursor for codebase indexing across all its users. Founder was a Shopify principal engineer.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Small but high-profile customer list; fast growth 2024–2025</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Per-user / multi-tenant vector search at low cost</div></div>
+        </div>
+        <div class="comp-links"><a href="https://turbopuffer.com">turbopuffer.com</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

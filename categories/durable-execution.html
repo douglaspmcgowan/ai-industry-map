@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durable Execution — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Durable Execution</div>
+  <h1>Durable Execution</h1>
+  <p class="lead">Infrastructure for workflows that must survive crashes, restarts, and long waits. Agents often run for minutes or hours, hit rate limits, wait on human approval, or need to retry after a model outage. Durable-execution engines checkpoint every step so the workflow can resume exactly where it left off — even days later.</p>
+  <div class="note"><strong>Why this matters for agents.</strong> A naive agent loop dies if the process crashes. Durable execution turns your agent into a workflow whose state is persisted every step, so you can survive deploys, restarts, and 24-hour "wait for human" pauses without losing a byte of context.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="temporal">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=temporal.io&sz=128" alt="Temporal"></div>
+        <div class="comp-title">
+          <h3>Temporal</h3>
+          <div class="maker">Temporal Technologies · founded 2019 · CEO Maxim Fateev</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Enterprise</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The category-defining durable-execution engine. Originally spun out of Uber's Cadence project. Workflows are code (Go, Java, Python, TS, .NET, Ruby, PHP) — every step is automatically checkpointed.</p>
+        <p><strong>What sets it apart.</strong> Maturity — runs in production at Uber, Netflix, Stripe, Airbnb. Handles billions of executions. "Workflow as code" beats YAML DSLs for complex branching. Temporal Cloud is the hosted version.</p>
+        <p><strong>Connections.</strong> OpenAI uses Temporal for some internal agent workflows. Many agent frameworks have Temporal adapters.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fortune-500 heavy; largest durable-exec engine by deployment count</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Ceiling is very high; handles massive scale and regulated workloads</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://temporal.io">temporal.io</a>
+          <a href="https://docs.temporal.io">Docs</a>
+          <a href="https://github.com/temporalio/temporal">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="inngest">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=inngest.com&sz=128" alt="Inngest"></div>
+        <div class="comp-title">
+          <h3>Inngest</h3>
+          <div class="maker">founded by Dan Farrelly & Tony Holdstock-Brown · 2021</div>
+        </div>
+        <div class="comp-tags"><span class="tag">TypeScript-first</span><span class="tag">AgentKit</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Developer-friendly durable execution designed for modern serverless/TS stacks. Event-triggered workflows, steps, and concurrency controls; runs on your own infra or Inngest Cloud. Ships "AgentKit" — purpose-built agent primitives on top.</p>
+        <p><strong>What sets it apart.</strong> Much lighter onboarding than Temporal. Works beautifully with Next.js, Vercel, Supabase. Co-founder Dan Farrelly is one of the loudest voices arguing "durable execution is the missing layer for agents."</p>
+        <p><strong>Connections.</strong> Popular in the Vercel / Next.js ecosystem. AgentKit is their answer to LangGraph-style orchestration but with durability built in.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fast-growing; default durable-exec for many TS/serverless teams</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Serverless + TypeScript + agents</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://inngest.com">inngest.com</a>
+          <a href="https://agentkit.inngest.com">AgentKit</a>
+          <a href="https://github.com/inngest/inngest">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="restate">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=restate.dev&sz=128" alt="Restate"></div>
+        <div class="comp-title">
+          <h3>Restate</h3>
+          <div class="maker">Restate · co-founded by Stephan Ewen (ex-Apache Flink)</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Rust engine</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Single-binary durable-execution engine written in Rust. Combines durable workflows, transactional state, and RPC into one system. Workflow SDKs in TypeScript, Java, Python, Kotlin, Go, Rust.</p>
+        <p><strong>What sets it apart.</strong> Single binary — drop it on a box, done. No Kafka / Cassandra / separate databases needed (unlike Temporal's heavier footprint). Strongest "developer local-first" experience in the category.</p>
+        <p><strong>Connections.</strong> Stephan Ewen was a co-founder of Apache Flink (stream processing). Restate is the team's second act — focused on the "operations" half of what Flink didn't quite nail.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Early but growing fast; popular in European engineering teams</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Simplest ops footprint in the category</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://restate.dev">restate.dev</a>
+          <a href="https://github.com/restatedev/restate">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="trigger-dev">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=trigger.dev&sz=128" alt="Trigger.dev"></div>
+        <div class="comp-title">
+          <h3>Trigger.dev</h3>
+          <div class="maker">Trigger.dev · founded 2023</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">TypeScript</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Background jobs + durable workflows for TypeScript. Tasks run on Trigger's own infra or self-hosted. Specifically positioned around long-running AI tasks that exceed serverless function timeouts.</p>
+        <p><strong>What sets it apart.</strong> AI-first positioning — "run your LLM task for 8 hours." Strong monitoring UI, retries, and concurrency keys. Generous free tier.</p>
+        <p><strong>Connections.</strong> Popular in Next.js / Remix apps. Often used with OpenAI / Anthropic long-running tasks.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Growing fast; ~15K GitHub stars</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">TypeScript devs with long-running AI jobs</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://trigger.dev">trigger.dev</a>
+          <a href="https://github.com/triggerdotdev/trigger.dev">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="hatchet">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=hatchet.run&sz=128" alt="Hatchet"></div>
+        <div class="comp-title">
+          <h3>Hatchet</h3>
+          <div class="maker">Hatchet · YC-backed</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Postgres-based</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Distributed task queue / workflow engine backed by Postgres. Sweet spot: more power than a raw job queue, less ceremony than Temporal.</p>
+        <p><strong>What sets it apart.</strong> Postgres as the source of truth — easy ops, easy to understand. Python, TS, Go SDKs. Good fit for teams that already have a Postgres-centric stack.</p>
+        <p><strong>Connections.</strong> Often described as "Temporal lite" or "Inngest but on your Postgres."</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Smaller but growing; mid-size engineering teams</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Postgres-first, self-hosted, no new infra</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://hatchet.run">hatchet.run</a>
+          <a href="https://github.com/hatchet-dev/hatchet">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="dbos">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=dbos.dev&sz=128" alt="DBOS"></div>
+        <div class="comp-title">
+          <h3>DBOS</h3>
+          <div class="maker">founded by Mike Stonebraker & Matei Zaharia</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Research-grade</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Durable-execution library where the OS is essentially Postgres. Founders are Turing-award-winner Mike Stonebraker (Postgres) and Matei Zaharia (Spark, Databricks). TypeScript and Python.</p>
+        <p><strong>What sets it apart.</strong> Academic pedigree — based on the "DBOS" OS paper. "Exactly-once" durable workflow semantics in &lt;100 lines of glue code. Aggressive simplicity: your workflow state IS a Postgres row.</p>
+        <p><strong>Connections.</strong> Spun out of MIT / Stanford. Strong overlap with Restate and Hatchet philosophically (single-binary, Postgres-centric).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Early; strong traction among academic / research-inflected teams</div></div>
+          <div class="kv"><div class="k">Founders</div><div class="v">Stonebraker (Postgres) + Zaharia (Spark) — unusual pedigree</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://dbos.dev">dbos.dev</a>
+          <a href="https://github.com/dbos-inc/dbos-transact-ts">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

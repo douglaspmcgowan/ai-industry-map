@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizations — AI Industry Map</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="index.html">Home</a><a href="visualizations.html">Visualizations</a><a href="references.html">References</a></nav>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="index.html">Home</a> / Visualizations</div>
+  <h1>Visualizations & existing industry maps</h1>
+  <p class="lead">Two things here: (1) ways you could turn this site's data into an interactive mindmap / graph / poster, and (2) existing online maps of the AI industry you can use today as reference.</p>
+
+  <h2>1. Existing industry maps (use these now)</h2>
+
+  <div class="comp-list">
+    <div class="comp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=firstmark.com&sz=128" alt="MAD"></div>
+        <div class="comp-title">
+          <h3>Matt Turck's MAD (Machine Learning, AI & Data) Landscape</h3>
+          <div class="maker">FirstMark Capital · annual · last updated Oct 2025</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Poster-style</span></div>
+      </div>
+      <div class="comp-body">
+        <p>The most-cited industry map. Dense, poster-style "logos-in-boxes" layout covering ~2,000+ companies across infra, ML, AI, data, and applications. Published annually with a long accompanying essay.</p>
+        <p><strong>Use when:</strong> you want a full bird's-eye view. It's not interactive or opinionated — it's a census.</p>
+        <p><strong>Freshness note:</strong> the current live version is the Oct 2025 "Bubble and Build" edition. No 2026 edition published yet as of April 2026 — LLM and agent categories are noticeably behind.</p>
+        <div class="comp-links">
+          <a href="https://mad.firstmark.com/">mad.firstmark.com</a>
+          <a href="https://mattturck.com">Matt Turck's blog</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=menlovc.com&sz=128" alt="Menlo"></div>
+        <div class="comp-title">
+          <h3>Menlo Ventures — The State of AI</h3>
+          <div class="maker">Menlo Ventures · bi-annual</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Narrative + maps</span></div>
+      </div>
+      <div class="comp-body">
+        <p>Menlo's "State of Generative AI" reports include category maps and usage / spending data. More opinionated than MAD, better as reading than as a reference poster.</p>
+        <div class="comp-links">
+          <a href="https://menlovc.com/perspective/">menlovc.com/perspective</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=stackone.com&sz=128" alt="StackOne"></div>
+        <div class="comp-title">
+          <h3>StackOne — 120+ Agentic AI Tools Mapped</h3>
+          <div class="maker">StackOne</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Agent-focused</span></div>
+      </div>
+      <div class="comp-body">
+        <p>Specifically focused on the agent stack — 120+ tools across 11 categories (frameworks, orchestration, memory, tool integrations, observability, etc.). Useful overlap with this site's scope.</p>
+        <div class="comp-links">
+          <a href="https://www.stackone.com/blog/ai-agent-tools-landscape-2026">stackone.com agent landscape 2026</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=a16z.com&sz=128" alt="a16z"></div>
+        <div class="comp-title">
+          <h3>a16z — AI Canon + "Emerging Architectures for LLM Apps"</h3>
+          <div class="maker">Andreessen Horowitz</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Architecture diagrams</span></div>
+      </div>
+      <div class="comp-body">
+        <p>Not a single poster — a curated reading list + reference architecture diagrams. Their "Emerging Architectures for LLM Applications" is the most-reproduced stack diagram in the industry.</p>
+        <div class="comp-links">
+          <a href="https://a16z.com/ai-canon">AI Canon</a>
+          <a href="https://a16z.com/emerging-architectures-for-llm-applications/">Emerging Architectures</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="awesome"></div>
+        <div class="comp-title">
+          <h3>awesome-* lists on GitHub</h3>
+          <div class="maker">community-maintained</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Text lists</span></div>
+      </div>
+      <div class="comp-body">
+        <p>Category-specific curated lists. Higher signal-to-noise than Google; lower polish than VC reports.</p>
+        <div class="comp-links">
+          <a href="https://github.com/e2b-dev/awesome-ai-agents">awesome-ai-agents</a>
+          <a href="https://github.com/punkpeye/awesome-mcp-servers">awesome-mcp-servers</a>
+          <a href="https://github.com/caramaschiHG/awesome-ai-agents-2026">awesome-ai-agents-2026</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>2. How you could turn this site into an interactive map</h2>
+
+  <p>Nine approaches, roughly from "prettier version of the site" to "research-artifact you could publish." Each card explains the tool stack, what it uniquely enables, what it costs in effort, and how it'd feel to use on <em>this</em> data (~200 companies, ~14 categories, mostly qualitative).</p>
+
+  <div class="comp-list">
+
+    <div class="comp">
+      <div class="comp-title"><h3>A. Tree / mindmap (Markmap)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> Markmap is a single JS library that parses a Markdown outline into a collapsible, pan/zoom SVG tree. You write one .md file — headings become branches, bullets become leaves — and a build step spits out an HTML page. No database, no backend.</p>
+        <p><strong>What it uniquely enables.</strong> Near-zero maintenance cost. If you can write Markdown, you can edit the map. Collapsing branches lets readers drill from the 14-category overview down to a single competitor without overwhelming them.</p>
+        <p><strong>Cost.</strong> A weekend to convert your existing pages into one master outline.</p>
+        <p><strong>Feels like.</strong> A Wikipedia table-of-contents you can fold. Great for hierarchy; silent on relationships (Anthropic→MCP→OpenAI-adopted-it is a story Markmap can't tell).</p>
+        <div class="comp-links">
+          <a href="https://markmap.js.org">markmap.js.org</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>B. Node-link force graph (D3 / Cytoscape / Cosmograph)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> Three flavors at different scales. <strong>D3-force</strong> is the classic — JS-animated simulation, great up to ~500 nodes. <strong>Cytoscape.js</strong> adds built-in layouts, selection, and graph-theory algorithms (shortest path, betweenness). <strong>Cosmograph</strong> is GPU/WebGL-accelerated and stays smooth at 100k+ nodes. All three take a JSON of <code>{nodes:[...], edges:[...]}</code>.</p>
+        <p><strong>What it uniquely enables.</strong> Makes <em>relationships</em> first-class. Your site already encodes "owns," "built-on," "competes-with," "invested-in" in prose — a force graph surfaces them spatially. Clusters emerge that your 14-category split hides (e.g., the "stuff built on Claude" cluster spans 5 categories).</p>
+        <p><strong>Cost.</strong> Week 1: extract a nodes+edges JSON from your existing HTML. Week 2: D3-force page with filters. Cosmograph only if you grow past ~1k entries.</p>
+        <p><strong>Feels like.</strong> A constellation you can grab and drag. Satisfying, but at 200 unfiltered nodes it becomes a "hairball" — you need per-edge-type toggles and category filters to keep it legible.</p>
+        <div class="comp-links">
+          <a href="https://d3js.org/d3-force">D3 force</a>
+          <a href="https://js.cytoscape.org">Cytoscape.js</a>
+          <a href="https://cosmograph.app">Cosmograph</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>C. Semantic embedding map (UMAP + Deepscatter)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> (1) Run each competitor's description through an embedding model (OpenAI <code>text-embedding-3-small</code>, or Voyage, or a local BGE). (2) Project the 1536-D vectors down to 2D with <strong>UMAP</strong> (preserves local neighborhoods better than t-SNE). (3) Optionally cluster with <strong>HDBSCAN</strong> to auto-label neighborhoods. (4) Render the scatter with <strong>Deepscatter</strong> — a WebGL library built for millions of points; overkill here, but gives buttery pan/zoom and tooltips.</p>
+        <p><strong>What it uniquely enables.</strong> A <em>semantic</em> map, not an editorial one. Tools cluster by <em>what they actually do</em>, not by which category you filed them under. Windsurf lands next to Cursor even though you could have put them in different buckets. Surfaces cross-category similarity the hand-curated tree can't.</p>
+        <p><strong>Cost.</strong> A day to embed 200 descriptions (~$0.05 in API cost). A day for the UMAP + HDBSCAN pipeline in a Python notebook. A day to wire Deepscatter on the front-end. Total: a long weekend.</p>
+        <p><strong>Feels like.</strong> A star chart where proximity means similarity. Very research-paper-coded. Pairs beautifully with B — one map for relationships, one for semantics.</p>
+        <div class="comp-links">
+          <a href="https://github.com/nomic-ai/deepscatter">Deepscatter</a>
+          <a href="https://umap-learn.readthedocs.io">UMAP</a>
+          <a href="https://hdbscan.readthedocs.io">HDBSCAN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>D. Infinite canvas (tldraw / Kumu / Obsidian)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> <strong>tldraw SDK</strong> is an embeddable React component giving you pan/zoom, shapes, arrows, and freehand on a bottomless canvas — you can ship a read-only curated board or let visitors annotate. <strong>Kumu</strong> is a hosted SaaS purpose-built for relationship maps; you import CSV of nodes+edges and get filter UI for free. <strong>Obsidian Canvas</strong> is local-first, file-backed, not web-deployable.</p>
+        <p><strong>What it uniquely enables.</strong> Human layout, not algorithmic. You decide what sits near what; you can group Anthropic-adjacent tools in a visual cluster that doesn't emerge from any automated layout. Annotations, arrows, and region labels are first-class.</p>
+        <p><strong>Cost.</strong> Kumu: a weekend if your data is already in a spreadsheet. tldraw: 1–2 weeks to integrate and populate.</p>
+        <p><strong>Feels like.</strong> A Figjam board of the industry. High-touch, low-automation; looks opinionated, which is a feature for a curated site and a bug if you want it to feel objective.</p>
+        <div class="comp-links">
+          <a href="https://tldraw.dev">tldraw.dev</a>
+          <a href="https://kumu.io">kumu.io</a>
+          <a href="https://obsidian.md/canvas">Obsidian Canvas</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>E. Reactive document (Observable Framework)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> <strong>Observable Framework</strong> is a static-site generator built around reactive JS cells. You write a page in Markdown + JS; sliders, selects, and code blocks re-run top-to-bottom when inputs change. Builds to static HTML — no server. Integrates D3, Plot, Arrow, and DuckDB-WASM for in-browser SQL over Parquet files.</p>
+        <p><strong>What it uniquely enables.</strong> <em>Live</em> exploration. A "pick your use case" dropdown that instantly refilters the map. A slider that redraws a treemap by "founded year." The reader drives the analysis instead of reading your conclusions.</p>
+        <p><strong>Cost.</strong> 1–2 weeks if you know JS. Steep ramp if you don't — reactive data flow is unfamiliar until it clicks.</p>
+        <p><strong>Feels like.</strong> A Jupyter notebook that reads like a magazine article. Strong research-artifact vibe. Heavier than the site you have now; lighter than a full webapp.</p>
+        <div class="comp-links">
+          <a href="https://observablehq.com/framework">Observable Framework</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>F. Scrollytelling per-category (Pudding-style)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> <strong>Scrollama</strong> (a 4KB JS lib) listens for scroll position and triggers "steps" — as the reader scrolls, a pinned graphic on the right morphs. Built on top of D3 or any canvas. Works in plain HTML, Astro, Next.js, or Svelte.</p>
+        <p><strong>What it uniquely enables.</strong> Narrative. Good for <em>per-category</em> deep-dives: "how coding agents evolved 2023→2026" with a timeline that rearranges as you scroll. Terrible for the 14-category overview — scrolling is linear, the map is not.</p>
+        <p><strong>Cost.</strong> A week per scrolly page. Custom enough that each page is bespoke.</p>
+        <p><strong>Feels like.</strong> A New York Times data story. High production value per page, high effort, doesn't scale to "map of everything."</p>
+        <div class="comp-links">
+          <a href="https://github.com/russellsamora/scrollama">Scrollama</a>
+          <a href="https://pudding.cool">Pudding (examples)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>G. Tile-based zoom map (deck.gl + MapLibre)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> Treat the landscape like a geographic map. <strong>tippecanoe</strong> (Mapbox's tile generator) pre-renders your 200 companies into vector tiles at multiple zoom levels. <strong>MapLibre GL</strong> serves them in the browser; <strong>deck.gl</strong> adds interactive WebGL layers on top. You place each company at its UMAP coordinates — panning + zooming feels like Google Maps, but the territory is semantic.</p>
+        <p><strong>What it uniquely enables.</strong> True multi-scale. At low zoom you see continents (categories as labeled regions); at high zoom you see individual companies with logos and metadata. Labels dynamically decluster.</p>
+        <p><strong>Cost.</strong> 2–3 months to build well. Overkill for 200 entries — this stack is designed for 100k+.</p>
+        <p><strong>Feels like.</strong> "Google Maps for AI." Stunning, impressive, and disproportionate to the dataset. Worth it only if you plan to scale into thousands of entries and want a research moat.</p>
+        <div class="comp-links">
+          <a href="https://deck.gl">deck.gl</a>
+          <a href="https://maplibre.org">MapLibre GL</a>
+          <a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>H. 3D starfield (Three.js / React Three Fiber)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> <strong>Three.js</strong> wraps WebGL; <strong>React Three Fiber</strong> gives it a React component model. Each company is a glowing point in 3D space, positioned by a 3D UMAP projection. Reference: Google's <em>100,000 Stars</em> visualization of the Milky Way.</p>
+        <p><strong>What it uniquely enables.</strong> Awe. Pure aesthetic payoff — great for a landing page, portfolio piece, or tweet-able moment. Hover states, camera flights to specific nodes, constellation lines between related tools.</p>
+        <p><strong>Cost.</strong> 3–6 months to polish. Mobile performance is a real concern; accessibility is weak (screen readers can't narrate 3D space).</p>
+        <p><strong>Feels like.</strong> Sci-fi. All spectacle, limited info density per pixel — readers find the tool they wanted <em>slower</em> than on your current site. Consider it a hero visualization, not the primary interface.</p>
+        <div class="comp-links">
+          <a href="https://threejs.org">Three.js</a>
+          <a href="https://r3f.docs.pmnd.rs">React Three Fiber</a>
+          <a href="https://stars.chromeexperiments.com">100,000 Stars (reference)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-title"><h3>I. Knowledge-graph DB (Neo4j / Memgraph + web UI)</h3></div>
+      <div class="comp-body">
+        <p><strong>Stack.</strong> A graph database (Neo4j or Memgraph) holds nodes and typed edges; you query with Cypher (<code>MATCH (c:Company)-[:USES]->(m:Model) WHERE m.name = 'Claude'</code>). Front-end either uses Neo4j's NeoDash (dashboard builder), Bloom (visual exploration), or a custom React app talking to the DB over HTTP.</p>
+        <p><strong>What it uniquely enables.</strong> Arbitrary queries. "Every tool founded by ex-Google Brain researchers that runs on Anthropic's API and has raised over $50M" is a one-line Cypher query — impossible in every other option here.</p>
+        <p><strong>Cost.</strong> 1–2 months initial build, plus ongoing schema maintenance. Highest ceiling, highest floor.</p>
+        <p><strong>Feels like.</strong> A research tool, not a brochure site. Worth it only if the goal is a living dataset you'll keep querying for months.</p>
+        <div class="comp-links">
+          <a href="https://neo4j.com">Neo4j</a>
+          <a href="https://memgraph.com">Memgraph</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note"><strong>My pick for this site.</strong> <strong>B + C together</strong>. <strong>B (node-link force graph)</strong> surfaces the "Anthropic→MCP→OpenAI adopted it" kind of editorial relationships you already hand-write. <strong>C (UMAP semantic map)</strong> surfaces similarity your hand-curation can't — cross-category twins like Windsurf ↔ Cursor. Together they're a one-week build (Cosmograph + a Python notebook) that gives the site a research-artifact feel without the 3-month commitment of G or H. If you only want one: <strong>B</strong>.</div>
+</div>
+
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

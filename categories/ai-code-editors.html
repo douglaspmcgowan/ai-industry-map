@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Code Editors — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / AI Code Editors</div>
+  <h1>AI Code Editors</h1>
+  <p class="lead">The IDE is the main battlefield for AI-assisted programming. These tools put an LLM inside your editor — autocomplete, chat, codebase-aware edits, agent mode. The line between "editor with AI" and "autonomous coding agent" (next category) is blurry and moving fast.</p>
+
+  <div class="note"><strong>How to read this.</strong> Cursor and Windsurf are the category leaders — both forks of VS Code with AI baked into the core loop. Copilot still owns enterprise by default. Zed is the dark-horse from-scratch contender. Continue and Aider are the open-source picks.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="cursor">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=128" alt="Cursor"></div>
+        <div class="comp-title">
+          <h3>Cursor</h3>
+          <div class="maker">by Anysphere · Founded 2022 · CEO Michael Truell</div>
+        </div>
+        <div class="comp-tags"><span class="tag">VS Code fork</span><span class="tag warn">$20/mo Pro</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A VS Code fork with AI woven into every surface: Tab (predictive multi-line completion), Chat (codebase-aware), Composer / Agent mode (multi-file automated edits), and inline diffs. Model-agnostic — users pick Claude, GPT, or Gemini from a dropdown.</p>
+        <p><strong>What sets it apart.</strong> Fastest, most polished in-editor agent experience. Cursor Tab's custom "cursor-small" model does blazing-fast speculative completions that neither Claude nor GPT can match at that latency. Became the default dev tool for AI-native startups in 2024–2025.</p>
+        <p><strong>Connections.</strong> Raised ~$900M at $9.9B valuation (2025). Heavy Anthropic user — Claude Sonnet 4.5 is the most-used model inside Cursor. Major beneficiary of MCP (Cursor's MCP support makes tool plugins easy).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">1M+ paying users reported, ~$500M+ ARR as of 2025</div></div>
+          <div class="kv"><div class="k">Founded</div><div class="v">2022; originally a sidecar, pivoted to full fork late 2023</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cursor.com">cursor.com</a>
+          <a href="https://docs.cursor.com">Docs</a>
+          <a href="https://forum.cursor.com">Forum</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="windsurf">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=codeium.com&sz=128" alt="Windsurf"></div>
+        <div class="comp-title">
+          <h3>Windsurf</h3>
+          <div class="maker">by Codeium · now owned by Cognition · CEO Jeff Wang</div>
+        </div>
+        <div class="comp-tags"><span class="tag">VS Code fork</span><span class="tag">Acquired 2025</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Also a VS Code fork, also AI-first, but with a distinctive "Cascade" agent mode that's more willing to take initiative across multiple files without confirming each step. Codeium's earlier autocomplete plugin was re-wrapped into the Windsurf IDE in late 2024.</p>
+        <p><strong>What sets it apart.</strong> Cascade mode's balance between autocomplete and full autonomy — less fussy than Cursor Composer for long refactors. Strong enterprise story (self-hosted, SOC 2) from Codeium's plugin days. Acquired by Cognition Labs (maker of Devin) in 2025 — Windsurf is now the IDE half of Cognition's "IDE + autonomous agent" strategy.</p>
+        <p><strong>Connections.</strong> Originally Codeium (founded by Varun Mohan, 2021). Google tried to acquire for ~$2.4B in mid-2025, deal fell through; Cognition bought the rump-company in a controversial deal. Cascade runs on Claude, GPT, and Codeium's own models.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Codeium's plugin had ~1M+ devs; Windsurf IDE adoption strong in enterprise</div></div>
+          <div class="kv"><div class="k">Parent</div><div class="v">Cognition Labs (also makes Devin)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://windsurf.com">windsurf.com</a>
+          <a href="https://docs.windsurf.com">Docs</a>
+          <a href="https://cognition.ai">Cognition (parent)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="antigravity">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Google Antigravity"></div>
+        <div class="comp-title">
+          <h3>Google Antigravity</h3>
+          <div class="maker">Google · launched early 2026</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Agent-first IDE</span><span class="tag warn">Rate-limit complaints</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google's agent-first IDE, designed from scratch around multi-step autonomous task execution (unlike Cursor / Copilot, which layered agents on top of autocomplete). Ships with <em>both</em> Claude Opus 4.6 and Gemini 3 Pro built in. Core UX: describe a task, the agent creates a plan, you approve, it executes with real-time visibility.</p>
+        <p><strong>What sets it apart.</strong> The "plan before action" step is a meaningful safety net against agents wandering off. Scores 76.2% on SWE-bench Verified — among the top publicly benchmarked coding agents. Free at launch with no announced paid tier.</p>
+        <p><strong>Connections.</strong> Merged with Google AI Studio in early 2026 to form Google's "full-stack vibe coding" pipeline. Google is sunsetting Firebase Studio in favor of Antigravity-plus-AI-Studio as the primary builder. Runs Claude Opus 4.6 despite being a Google product — the most visible cross-vendor model deal of 2026.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Reception</div><div class="v">Strong benchmarks; mixed real-world reviews — tight rate limits in March 2026 drew "$20 paperweight" complaints</div></div>
+          <div class="kv"><div class="k">Platform</div><div class="v">Desktop (macOS, Windows, Linux)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://antigravity.google">antigravity.google</a>
+          <a href="https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/">Launch post</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="copilot">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub"></div>
+        <div class="comp-title">
+          <h3>GitHub Copilot</h3>
+          <div class="maker">Microsoft / GitHub · CEO Thomas Dohmke (GitHub)</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Enterprise default</span><span class="tag">VS Code extension</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The original AI code assistant, launched in 2021 on top of OpenAI Codex. Now a suite: Copilot (autocomplete + chat), Copilot Workspace (plan → diff), Copilot Agent Mode (VS Code-native agent added 2025), and Copilot Extensions (third-party tool integrations).</p>
+        <p><strong>What sets it apart.</strong> Enterprise incumbency. When a large company "turns on AI coding," Copilot is the default because of GitHub Enterprise licensing and Microsoft procurement. Model-agnostic: users can pick GPT-5, Claude, or Gemini inside Copilot.</p>
+        <p><strong>Connections.</strong> Owned by Microsoft (via GitHub, acquired 2018). Trained originally on OpenAI models (Microsoft is exclusive Azure partner). Integrated natively into VS Code (Microsoft) and JetBrains IDEs.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">20M+ developers, ~100K enterprises as of 2025; largest user base in category</div></div>
+          <div class="kv"><div class="k">Positioning</div><div class="v">Safe default for incumbents; Cursor/Windsurf win the startup early-adopter fight</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://github.com/features/copilot">github.com/features/copilot</a>
+          <a href="https://docs.github.com/copilot">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="zed">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=zed.dev&sz=128" alt="Zed"></div>
+        <div class="comp-title">
+          <h3>Zed</h3>
+          <div class="maker">by Zed Industries · CEO Nathan Sobo (co-creator of Atom)</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Rust-native</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A ground-up rewrite of "the editor" in Rust — GPU-rendered, designed from day one for real-time collaboration and AI. Ships an "Agent panel" with Claude/GPT support, in-editor threaded chat, and a native MCP client.</p>
+        <p><strong>What sets it apart.</strong> Not a VS Code fork — the only serious AI editor built from scratch. Result: genuinely faster than Cursor / Windsurf, lower memory, better Linux support. Open-source under GPL + Apache.</p>
+        <p><strong>Connections.</strong> Built by the team behind Atom (the editor GitHub retired in 2022). Heavy use of Tree-sitter (also co-created by Zed's Max Brunsfeld). Native MCP support makes it tight with Anthropic's ecosystem.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Smaller than Cursor but devoted following among performance-sensitive / Linux devs</div></div>
+          <div class="kv"><div class="k">Founded</div><div class="v">2022; AI features became first-class in 2024–2025</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://zed.dev">zed.dev</a>
+          <a href="https://github.com/zed-industries/zed">GitHub</a>
+          <a href="https://zed.dev/docs">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="jetbrains-ai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=jetbrains.com&sz=128" alt="JetBrains"></div>
+        <div class="comp-title">
+          <h3>JetBrains AI Assistant / Junie</h3>
+          <div class="maker">JetBrains · Prague</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Paid add-on</span><span class="tag">Enterprise</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> AI features bolted into every JetBrains IDE — IntelliJ, PyCharm, WebStorm, Rider, etc. "Junie" is JetBrains' agent-mode product, launched 2025. Supports Claude, GPT, Gemini, and JetBrains' own models.</p>
+        <p><strong>What sets it apart.</strong> Deepest static-analysis / refactoring engine of any IDE — JetBrains can do precise, symbol-aware edits that pure-LLM editors struggle with. Big advantage for large Java / Kotlin / C# codebases.</p>
+        <p><strong>Connections.</strong> Long-time rival to Microsoft's VS Code ecosystem. Copilot also runs as a plugin inside JetBrains, so devs can mix-and-match.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Huge install base (JetBrains IDEs have ~15M+ users); AI adoption catching up</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Best choice for Java/Kotlin/.NET shops with large legacy codebases</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://www.jetbrains.com/ai/">jetbrains.com/ai</a>
+          <a href="https://www.jetbrains.com/junie/">Junie</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="continue">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=continue.dev&sz=128" alt="Continue"></div>
+        <div class="comp-title">
+          <h3>Continue</h3>
+          <div class="maker">by Continue Dev · CEO Ty Dunn</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">BYO model</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Open-source AI code assistant that installs as an extension in VS Code and JetBrains. Bring-your-own-model — works with local (Ollama, LM Studio), open-weights, or frontier APIs.</p>
+        <p><strong>What sets it apart.</strong> The go-to choice for devs who want Cursor-like features without leaving VS Code proper, or who want to run entirely locally for privacy / compliance. "Continue Hub" lets teams share assistant configurations as code.</p>
+        <p><strong>Connections.</strong> YC-backed. Heavily used inside enterprises that can't send code to frontier APIs; often paired with Ollama or vLLM locally.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hundreds of thousands of installs via VS Code marketplace</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Open-source / local-first / regulated-industry default</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://continue.dev">continue.dev</a>
+          <a href="https://github.com/continuedev/continue">GitHub</a>
+          <a href="https://docs.continue.dev">Docs</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

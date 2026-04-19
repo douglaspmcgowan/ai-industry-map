@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Observability & Evals — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / AI Observability & Evals</div>
+  <h1>AI Observability & Evals</h1>
+  <p class="lead">Traces, evaluations, and dashboards for LLM apps. Two overlapping jobs: <em>observability</em> (record what happened) and <em>evals</em> (test whether it was correct). PostHog's take: you need both, but looking at real traces beats running synthetic evals on day one.</p>
+  <div class="note"><strong>Why this category exists.</strong> LLM apps are non-deterministic — the same input can produce different outputs. Without traces you can't diagnose bugs. Without evals you don't notice regressions. Every serious AI team ends up with one of these.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="langsmith">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=langchain.com&sz=128" alt="LangSmith"></div>
+        <div class="comp-title"><h3>LangSmith</h3><div class="maker">LangChain Inc.</div></div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Traces + evals</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> LangChain's observability + evals platform. Traces, human review, LLM-as-judge evals, dataset management, prompt playground.</p>
+        <p><strong>What sets it apart.</strong> Works with any framework (not just LangChain). Market leader by usage. Tightest integration with LangGraph.</p>
+        <p><strong>Connections.</strong> Often sold alongside LangGraph (they share SDK).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Largest managed LLM observability by revenue</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free tier; Plus $39/mo per seat; enterprise pricing</div></div>
+        </div>
+        <div class="comp-links"><a href="https://smith.langchain.com">smith.langchain.com</a><a href="https://docs.smith.langchain.com">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="langfuse">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=langfuse.com&sz=128" alt="Langfuse"></div>
+        <div class="comp-title"><h3>Langfuse</h3><div class="maker">Langfuse · Berlin</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Self-host</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Open-source LangSmith. Traces, evals, prompt management, dataset management — all self-hostable. Also offers Langfuse Cloud.</p>
+        <p><strong>What sets it apart.</strong> The default pick when you can't send prompts/outputs to a third-party SaaS (regulated industries, self-hosting preference). Generous free tier on Cloud.</p>
+        <p><strong>Connections.</strong> Works with LangChain, LlamaIndex, Claude Agent SDK, OpenAI Agents SDK, any LLM.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~12K GitHub stars; leading OSS choice in category</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Self-hostable; no data leaves your infra</div></div>
+        </div>
+        <div class="comp-links"><a href="https://langfuse.com">langfuse.com</a><a href="https://github.com/langfuse/langfuse">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="helicone">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=helicone.ai&sz=128" alt="Helicone"></div>
+        <div class="comp-title"><h3>Helicone</h3><div class="maker">Helicone · YC</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Proxy-based</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Proxy-based LLM observability — you point your OpenAI/Anthropic SDK at Helicone's URL and it logs everything. One-line integration.</p>
+        <p><strong>What sets it apart.</strong> Lowest friction to install. Cost analytics + caching + rate limiting built in. Popular for quick-start observability.</p>
+        <p><strong>Connections.</strong> Often paired with LangSmith or Langfuse — Helicone handles raw logging, the others handle evals.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hundreds of thousands of developers; fast YC-era growth</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Proxy-based "just-log-everything" simplicity</div></div>
+        </div>
+        <div class="comp-links"><a href="https://helicone.ai">helicone.ai</a><a href="https://github.com/Helicone/helicone">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="braintrust">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=braintrust.dev&sz=128" alt="Braintrust"></div>
+        <div class="comp-title"><h3>Braintrust</h3><div class="maker">Braintrust · founded by Ankur Goyal (ex-MotherDuck, ex-Figma)</div></div>
+        <div class="comp-tags"><span class="tag">Evals-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Evals-centric platform. Write datasets as code, run LLM-as-judge graders, compare models side-by-side, integrate into CI. Traces and prompt management as supporting features.</p>
+        <p><strong>What sets it apart.</strong> Best developer experience for evals-as-code. Strong typed SDKs. Used by Zapier, Vercel, and most "serious engineering culture" LLM teams.</p>
+        <p><strong>Connections.</strong> Founders have MotherDuck + Figma backgrounds — product-engineering-heavy pedigree. Often cited alongside Promptfoo.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fast-growing among technical teams; smaller user base than LangSmith, larger-contract focus</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Evals-in-CI / TypeScript-native / engineering-rigor teams</div></div>
+        </div>
+        <div class="comp-links"><a href="https://braintrust.dev">braintrust.dev</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="arize">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=arize.com&sz=128" alt="Arize"></div>
+        <div class="comp-title"><h3>Arize AI (+ Phoenix)</h3><div class="maker">Arize · founded 2020</div></div>
+        <div class="comp-tags"><span class="tag">Enterprise</span><span class="tag good">Phoenix is OSS</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Enterprise ML + LLM observability platform. Arize AX is the commercial product; Phoenix is the open-source core (notebook-friendly tracing + evals).</p>
+        <p><strong>What sets it apart.</strong> Deep classic-ML roots — the only vendor covering both traditional ML monitoring and LLM observability in one platform. Popular at regulated-industry customers that need both.</p>
+        <p><strong>Connections.</strong> Phoenix has ~4K GitHub stars; commonly used in Jupyter for one-off debugging.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Enterprise ML shops; less mindshare in startup AI than LangSmith</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">ML + LLM unified; regulated industries</div></div>
+        </div>
+        <div class="comp-links"><a href="https://arize.com">arize.com</a><a href="https://phoenix.arize.com">Phoenix</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="posthog-llm">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=posthog.com&sz=128" alt="PostHog LLM"></div>
+        <div class="comp-title"><h3>PostHog LLM Analytics</h3><div class="maker">PostHog</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Product analytics</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> PostHog (product analytics) added LLM-specific analytics in 2024–2025. Combines traces with the product-analytics layer (session replays, funnel analysis, cohorts) — so you can correlate LLM quality with business metrics.</p>
+        <p><strong>What sets it apart.</strong> The only option that unifies LLM observability with session replay and product analytics in one tool. PostHog's own AI team uses it for "Trace Hours" (watching real user traces).</p>
+        <p><strong>Connections.</strong> PostHog also ships PostHog AI (an in-product agent) — eats its own dogfood.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">PostHog has ~100K paying customers; LLM features adoption is the newest slice</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Product + LLM observability unified</div></div>
+        </div>
+        <div class="comp-links"><a href="https://posthog.com/llm-observability">posthog.com/llm-observability</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="promptfoo">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=promptfoo.dev&sz=128" alt="Promptfoo"></div>
+        <div class="comp-title"><h3>Promptfoo</h3><div class="maker">acquired by OpenAI March 2026</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Evals + red-team</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> YAML-configured eval harness: define test cases, run across providers, get diffs. Also supports red-teaming / vulnerability scanning for agents. Acquired by OpenAI in March 2026 (the OSS project continues).</p>
+        <p><strong>What sets it apart.</strong> Lowest-friction way to compare GPT vs Claude vs Gemini on the same prompts. Strong CI integration. Fireship favorite.</p>
+        <p><strong>Connections.</strong> Now part of OpenAI's Frontier AI security platform. OSS tool still usable with any provider.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Tens of thousands of users; strong indie-dev adoption</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Evals-as-YAML + red-teaming</div></div>
+        </div>
+        <div class="comp-links"><a href="https://promptfoo.dev">promptfoo.dev</a><a href="https://github.com/promptfoo/promptfoo">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="traceloop">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=traceloop.com&sz=128" alt="Traceloop"></div>
+        <div class="comp-title"><h3>Traceloop (OpenLLMetry)</h3><div class="maker">Traceloop</div></div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">OpenTelemetry</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> OpenLLMetry is an open-source extension of OpenTelemetry for LLM apps. Traceloop is the managed dashboard built on top.</p>
+        <p><strong>What sets it apart.</strong> Standards-based — emits OpenTelemetry spans. Works with any OTel-compatible backend (Datadog, Grafana, Honeycomb, etc.), not just Traceloop's own UI.</p>
+        <p><strong>Connections.</strong> Part of CNCF / OpenTelemetry ecosystem. Preferred by orgs that already have big OTel investments.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Growing with OpenTelemetry adoption</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">OTel-shop AI observability</div></div>
+        </div>
+        <div class="comp-links"><a href="https://traceloop.com">traceloop.com</a><a href="https://github.com/traceloop/openllmetry">GitHub</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

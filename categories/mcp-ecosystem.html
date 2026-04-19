@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Ecosystem — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / MCP Ecosystem</div>
+  <h1>MCP Ecosystem</h1>
+  <p class="lead">The <strong>Model Context Protocol</strong> is an open standard (originally from Anthropic, Nov 2024) that lets any AI agent talk to any tool. Think USB-C for AI tools. In 2025 it became the industry-default — OpenAI, Google, Microsoft, and most frameworks now speak MCP. This category is about the registries, hosts, and SDKs that grew around it.</p>
+  <div class="note"><strong>MCP in one paragraph.</strong> An "MCP server" exposes tools (functions the AI can call), resources (data it can read), and prompts. An "MCP client" (Claude Desktop, Cursor, Windsurf, ChatGPT, etc.) connects to it over stdio (local) or HTTP (remote). Specs at <a href="https://modelcontextprotocol.io">modelcontextprotocol.io</a>.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="mcp-spec">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="MCP"></div>
+        <div class="comp-title">
+          <h3>The MCP Spec + Reference Servers</h3>
+          <div class="maker">Anthropic (original) · now multi-vendor stewardship</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open spec</span><span class="tag">Industry standard</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The protocol itself, plus Anthropic's reference MCP servers (file system, GitHub, Slack, Postgres, Puppeteer, etc.) in the <code>modelcontextprotocol/servers</code> repo.</p>
+        <p><strong>What sets it apart.</strong> The <em>spec</em> is the whole ecosystem — everything else listed here piggybacks on it. Adoption by OpenAI, Google, Microsoft, and the open-source world in 2025 turned MCP into a genuine cross-vendor standard (rare in AI).</p>
+        <p><strong>Connections.</strong> Launched by Anthropic. Now stewarded via an open working group. Huge reference-server library.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Supported by Claude Desktop, Cursor, Windsurf, Zed, ChatGPT Desktop, VS Code, and more</div></div>
+          <div class="kv"><div class="k">Launched</div><div class="v">November 2024</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://modelcontextprotocol.io">modelcontextprotocol.io</a>
+          <a href="https://github.com/modelcontextprotocol/servers">Reference servers</a>
+          <a href="https://github.com/modelcontextprotocol">GitHub org</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="smithery">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=smithery.ai&sz=128" alt="Smithery"></div>
+        <div class="comp-title">
+          <h3>Smithery</h3>
+          <div class="maker">Smithery · 2024</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Registry + runtime</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The most-used MCP server registry. Lets you discover, install, and even host MCP servers with one click — both local (stdio) and remote (HTTP).</p>
+        <p><strong>What sets it apart.</strong> Hosted-server runtime (not just a directory) means MCP servers can run remotely without you setting up infra. Clean one-command installers for most clients.</p>
+        <p><strong>Connections.</strong> Closest thing to an "npm for MCP." Works with Claude Desktop, Cursor, Windsurf, etc.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Thousands of MCP servers indexed; primary installer for MCP in the wild</div></div>
+          <div class="kv"><div class="k">Role</div><div class="v">Registry + hosted runtime + install UX</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://smithery.ai">smithery.ai</a>
+          <a href="https://github.com/smithery-ai">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="mcp-so">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=mcp.so&sz=128" alt="MCP.so"></div>
+        <div class="comp-title">
+          <h3>MCP.so</h3>
+          <div class="maker">community-run</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Directory</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Community directory of MCP servers, clients, and resources. Includes install configs, stars, descriptions, and categories.</p>
+        <p><strong>What sets it apart.</strong> Broader and more neutral than Smithery — lists servers that aren't hosted on Smithery's runtime. Good for browsing and benchmarking.</p>
+        <p><strong>Connections.</strong> Free alternative to Smithery for discovery-only. Indexes any GitHub-hosted MCP server.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Thousands of servers listed; hundreds of thousands of monthly visits</div></div>
+          <div class="kv"><div class="k">Role</div><div class="v">Pure directory / awesome-list-as-a-service</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://mcp.so">mcp.so</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="composio">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=composio.dev&sz=128" alt="Composio"></div>
+        <div class="comp-title">
+          <h3>Composio</h3>
+          <div class="maker">Composio · YC-backed</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Tool platform</span><span class="tag">Enterprise</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Managed tool-integration platform with 250+ pre-built tool integrations (Gmail, Slack, Notion, Linear, etc.) that you can drop into any agent via MCP or native SDKs. Handles auth (OAuth flows), rate limits, and tool versioning.</p>
+        <p><strong>What sets it apart.</strong> OAuth / auth is the hard part of agent-tool integrations — Composio takes on that burden. Works with LangChain, CrewAI, Claude Agent SDK, OpenAI Agents, etc., so you can use it regardless of framework.</p>
+        <p><strong>Connections.</strong> Alternative category leader to Arcade. Popular with enterprise agent builders who need reliable SaaS integrations.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Used by thousands of agent projects; SOC 2 compliant</div></div>
+          <div class="kv"><div class="k">Role</div><div class="v">"Zapier for agents" + auth manager</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://composio.dev">composio.dev</a>
+          <a href="https://github.com/ComposioHQ/composio">GitHub</a>
+          <a href="https://docs.composio.dev">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="arcade">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=arcade.dev&sz=128" alt="Arcade"></div>
+        <div class="comp-title">
+          <h3>Arcade</h3>
+          <div class="maker">Arcade (formerly Arcade AI)</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Tool platform</span><span class="tag">Auth-heavy</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Another managed "tools + auth for agents" platform. Pre-built integrations + a framework for writing your own custom tools in Python, with OAuth handled for you.</p>
+        <p><strong>What sets it apart.</strong> Developer-first SDK — writing a custom tool is one decorator away. Head-to-head competitor with Composio; the two often come up together.</p>
+        <p><strong>Connections.</strong> MCP-compatible. Works with major agent frameworks.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Mid-size dev community; fast growth in 2025</div></div>
+          <div class="kv"><div class="k">Role</div><div class="v">Similar to Composio; more custom-tooling-first</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://arcade.dev">arcade.dev</a>
+          <a href="https://docs.arcade.dev">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="fastmcp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=gofastmcp.com&sz=128" alt="FastMCP"></div>
+        <div class="comp-title">
+          <h3>FastMCP</h3>
+          <div class="maker">Jeremiah Lowin (Prefect) · open source</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Python</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The most popular Python framework for building MCP servers. Decorator-based (like FastAPI) — you write tools as normal Python functions and FastMCP exposes them over MCP.</p>
+        <p><strong>What sets it apart.</strong> Ergonomics — building an MCP server is typically &lt;20 lines. Auth, sessions, and deployment helpers baked in. FastMCP 2.0 (2025) merged into the official <code>modelcontextprotocol/python-sdk</code> as its ergonomic layer.</p>
+        <p><strong>Connections.</strong> Jeremiah Lowin also built Prefect (workflow engine). FastMCP is now effectively the default way to write MCP servers in Python.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Most community MCP servers are written with FastMCP</div></div>
+          <div class="kv"><div class="k">Role</div><div class="v">"FastAPI for MCP"</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://gofastmcp.com">gofastmcp.com</a>
+          <a href="https://github.com/jlowin/fastmcp">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

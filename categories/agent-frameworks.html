@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Frameworks — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Agent Frameworks</div>
+  <h1>Agent Frameworks (Third-Party)</h1>
+  <p class="lead">Libraries that sit on top of LLM APIs and handle the orchestration — loops, tool calls, memory, multi-agent coordination. Every one of these is in the controversial middle zone that PostHog warned about: they add abstraction that can hide bugs, and they lock you to ecosystems that evolve slower than the models themselves.</p>
+  <div class="note"><strong>First-party alternatives.</strong> The model makers (Anthropic, OpenAI, Google) all ship their own SDKs now — see <a href="first-party-sdks.html">First-Party Agent SDKs</a>. The choice between these third-party frameworks and first-party SDKs is itself a debate ("Frameworks considered harmful," per PostHog).</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="langgraph">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=langchain.com&sz=128" alt="LangGraph"></div>
+        <div class="comp-title">
+          <h3>LangGraph (+ LangChain)</h3>
+          <div class="maker">LangChain Inc. · CEO Harrison Chase</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Python + JS</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> LangChain is the earliest and most-used LLM framework (launched Oct 2022). LangGraph is their newer library for explicit graph-based agent orchestration — nodes are steps, edges are transitions, state is shared. Also ships LangSmith (observability) and LangGraph Platform (hosting).</p>
+        <p><strong>What sets it apart.</strong> Explicit graph model gives you full control and visibility, which is good for complex regulated workflows. Massive ecosystem — hundreds of integrations. LangGraph is one of the few frameworks with native support for checkpointing + human-in-the-loop pauses.</p>
+        <p><strong>Connections.</strong> LangSmith (observability) is the sister product; most LangGraph users pay for it too. Replaced much of the "raw LangChain" codebase over 2024–2025. Often paired with vector DBs (Pinecone, Weaviate) and model APIs.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Most-downloaded LLM framework on PyPI; LangChain has 90K+ GitHub stars</div></div>
+          <div class="kv"><div class="k">Criticism</div><div class="v">Abstraction hides behavior; PostHog's "Frameworks considered harmful" specifically cites LangGraph</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://langchain.com">langchain.com</a>
+          <a href="https://langchain-ai.github.io/langgraph/">LangGraph docs</a>
+          <a href="https://github.com/langchain-ai/langgraph">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="crewai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=crewai.com&sz=128" alt="CrewAI"></div>
+        <div class="comp-title">
+          <h3>CrewAI</h3>
+          <div class="maker">founded by João Moura · 2023</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Multi-agent</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Framework for multi-agent systems — you define "agents" with roles, goals, and tools, and "tasks" that get assigned, optionally with a "crew" that coordinates. Think of it as the "team of specialists" pattern in library form.</p>
+        <p><strong>What sets it apart.</strong> The most accessible multi-agent framework — role-based metaphor is easy to reason about. Huge adoption as a "start here" for multi-agent. Ships CrewAI Enterprise (hosted platform with observability, auth, deploy).</p>
+        <p><strong>Connections.</strong> Often compared to AutoGen (Microsoft). Heavily featured in Medium / YouTube tutorials, which drove outsized mindshare.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~35K GitHub stars; big tutorial / hobbyist community</div></div>
+          <div class="kv"><div class="k">Criticism</div><div class="v">Same as all multi-agent: context loss between agents hurts performance vs. single-loop</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://crewai.com">crewai.com</a>
+          <a href="https://github.com/crewaiinc/crewai">GitHub</a>
+          <a href="https://docs.crewai.com">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="autogen">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="AutoGen"></div>
+        <div class="comp-title">
+          <h3>AutoGen</h3>
+          <div class="maker">Microsoft Research · lead Chi Wang (later founded AG2)</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Multi-agent</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> One of the earliest multi-agent frameworks (2023). Pioneered the "conversational agents that talk to each other" pattern. Rebuilt from scratch as AutoGen 0.4 in late 2024 with a pub/sub architecture.</p>
+        <p><strong>What sets it apart.</strong> Research-grade — lots of the "multi-agent conversation" academic papers in 2023–2024 used AutoGen. Microsoft backing means tight Azure / Copilot Studio integration. The AutoGen v0.4 rewrite is more production-ready than v0.2.</p>
+        <p><strong>Connections.</strong> Original lead Chi Wang left Microsoft in 2024 to start AG2 — a community fork that kept the old API. So there are now two AutoGens. Microsoft's version is the official one.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~40K GitHub stars (combined); strong in research, slower production adoption</div></div>
+          <div class="kv"><div class="k">Fork</div><div class="v">AG2 (community) vs. AutoGen (Microsoft)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://microsoft.github.io/autogen/">microsoft.github.io/autogen</a>
+          <a href="https://github.com/microsoft/autogen">GitHub</a>
+          <a href="https://ag2.ai">AG2 (fork)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="pydantic-ai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=pydantic.dev&sz=128" alt="Pydantic"></div>
+        <div class="comp-title">
+          <h3>Pydantic AI</h3>
+          <div class="maker">Pydantic · Samuel Colvin</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Type-safe</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Python agent framework from the team behind Pydantic (the validation library). Launched late 2024. Minimal, type-safe, explicit — the anti-LangChain.</p>
+        <p><strong>What sets it apart.</strong> First-class structured-output types (of course — it's Pydantic). Tool definitions are just Python functions. Small, readable codebase you can actually understand. Popular with FastAPI developers (also built on Pydantic).</p>
+        <p><strong>Connections.</strong> Pydantic the library is used by literally every LLM framework, so this is a "first-party" play from the validation layer. Pydantic Logfire is the observability sister product.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fast growth among FastAPI / typed-Python crowd; ~10K stars in under a year</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Developers who want "just Python + types" instead of a DSL</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://ai.pydantic.dev">ai.pydantic.dev</a>
+          <a href="https://github.com/pydantic/pydantic-ai">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="mastra">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=mastra.ai&sz=128" alt="Mastra"></div>
+        <div class="comp-title">
+          <h3>Mastra</h3>
+          <div class="maker">founded by Sam Bhagwat (ex-Gatsby)</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">TypeScript</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A TypeScript-first agent framework — most frameworks are Python-first. Covers agents, workflows, RAG, evals, and observability in one bundle. Launched early 2025.</p>
+        <p><strong>What sets it apart.</strong> Clean TypeScript DX (tRPC-like ergonomics), good Next.js / Vercel integration, batteries-included. Becoming a popular choice in the JS ecosystem where LangChain-JS is seen as bloated.</p>
+        <p><strong>Connections.</strong> Founders previously built Gatsby (the React static-site generator). YC backed. Mastra Cloud is the hosted version.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fast growth in JS/TS agent community; ~12K stars</div></div>
+          <div class="kv"><div class="k">Audience</div><div class="v">TypeScript / Next.js teams</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://mastra.ai">mastra.ai</a>
+          <a href="https://github.com/mastra-ai/mastra">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="llamaindex">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=llamaindex.ai&sz=128" alt="LlamaIndex"></div>
+        <div class="comp-title">
+          <h3>LlamaIndex</h3>
+          <div class="maker">Jerry Liu · founded 2023</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">RAG-focused</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Originally "GPT-Index" — a RAG-focused framework for indexing and querying your documents with LLMs. Has since expanded into full agents and workflows, but RAG remains the main differentiator.</p>
+        <p><strong>What sets it apart.</strong> Deepest RAG toolkit of any framework — dozens of indexing strategies, retrieval modes, response synthesizers, and agent patterns specifically for document-heavy use cases. LlamaParse (paid) is a best-in-class PDF / doc parser.</p>
+        <p><strong>Connections.</strong> Historical rival to LangChain; overlapping feature sets now. LlamaHub has hundreds of community connectors. LlamaCloud is the hosted platform.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~35K GitHub stars; default choice for RAG-heavy apps</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Enterprise RAG — searching big document collections</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://llamaindex.ai">llamaindex.ai</a>
+          <a href="https://github.com/run-llama/llama_index">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="smolagents">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=128" alt="smolagents"></div>
+        <div class="comp-title">
+          <h3>smolagents</h3>
+          <div class="maker">Hugging Face</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Minimalist</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Hugging Face's tiny agent framework (launched early 2025). Core idea: "code agents" — the LLM writes Python code as its actions, rather than emitting structured tool-call JSON. Inspired by the "Executable Code Actions" paper.</p>
+        <p><strong>What sets it apart.</strong> Elegantly small (~1K lines of code). Python-as-action-space often beats rigid tool schemas for complex tasks. Backed by HuggingFace's model hub — easy to swap open-weights models.</p>
+        <p><strong>Connections.</strong> HF Spaces / Inference Endpoints for deployment. Academic roots (the code-actions approach).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~15K stars; popular in the open-weights / HF community</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Code-actions enthusiasts; local / open-model agent pipelines</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://huggingface.co/docs/smolagents">huggingface.co/docs/smolagents</a>
+          <a href="https://github.com/huggingface/smolagents">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="agno">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=agno.com&sz=128" alt="Agno"></div>
+        <div class="comp-title">
+          <h3>Agno (formerly Phidata)</h3>
+          <div class="maker">Ashpreet Bedi et al.</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Python</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Python agent framework (rebranded from Phidata in 2025). Emphasizes performance — claims "10,000x faster agent instantiation than LangGraph" — and out-of-the-box memory, knowledge, reasoning.</p>
+        <p><strong>What sets it apart.</strong> Speed benchmarks and minimal dependencies make it attractive where LangGraph's overhead hurts. Built-in "reasoning agents" and "memory agents" as primitives.</p>
+        <p><strong>Connections.</strong> Often compared side-by-side with CrewAI and LangGraph in benchmark posts.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~25K stars; smaller but dedicated community</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Performance-sensitive Python agents</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://agno.com">agno.com</a>
+          <a href="https://github.com/agno-agi/agno">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="hermes">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=nousresearch.com&sz=128" alt="Hermes Agent"></div>
+        <div class="comp-title">
+          <h3>Hermes Agent</h3>
+          <div class="maker">Nous Research · released Feb 25, 2026 · MIT</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Self-improving</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Nous Research's open-source agent framework, with a built-in learning loop: it creates reusable skills from experience, refines them as you use them, persists knowledge across sessions, and builds a model of the user over time. Ships with 118 bundled skills, three-layer memory, and six messaging integrations out of the box (Telegram, Discord, Slack, WhatsApp, Signal, Email, plus CLI).</p>
+        <p><strong>What sets it apart.</strong> The only framework on this list with a first-class self-improvement loop — most others treat "memory" as vector storage, Hermes treats it as a closed learning system. Model-agnostic: Nous Portal, OpenRouter (200+ models), NVIDIA NIM, z.ai/GLM, Kimi/Moonshot, MiniMax, HuggingFace, OpenAI, or custom endpoints. Runs on a $5 VPS or serverless.</p>
+        <p><strong>Connections.</strong> Nous Research is the same group behind the Hermes series of fine-tuned open-weights models (Hermes 3, Hermes 4). Hit ~95K GitHub stars in ~7 weeks — the fastest-growing agent framework of 2026.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~95K stars in 7 weeks; messaging-first agent deployments</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Personal agents that persist and improve across sessions</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://hermes-agent.nousresearch.com/">hermes-agent.nousresearch.com</a>
+          <a href="https://github.com/nousresearch/hermes-agent">GitHub</a>
+          <a href="https://hermes-agent.nousresearch.com/docs/">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="openclaw">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=openclaws.io&sz=128" alt="OpenClaw"></div>
+        <div class="comp-title">
+          <h3>OpenClaw</h3>
+          <div class="maker">created by Peter Steinberger · open source</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Personal agent</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> An open-source autonomous AI personal assistant that runs on your own machine. Executes real tasks — manages files, drives browsers, sends messages, and automates workflows across WhatsApp, Telegram, Discord, Slack, Signal, and iMessage. Positioned as "The AI that actually does things" — closer to a computer-use agent than a chatbot.</p>
+        <p><strong>What sets it apart.</strong> The messaging-integration surface is the broadest in any open-source agent — Signal + iMessage in particular are rare. Local-first, which Hermes and most cloud agents are not. TechCrunch called it category-defining enough that Indian startup Emergent's "Wingman" was framed as an "OpenClaw-like" competitor.</p>
+        <p><strong>Connections.</strong> Created by Peter Steinberger (ex-PSPDFKit founder). Spiritual sibling to Hermes Agent (above) — both are autonomous-personal-agent products, though Hermes is framework-first and OpenClaw is product-first. Often confused with <strong>OpenClaude</strong> (the Claude Code fork, different tool) and <strong>OpenCode</strong> (SST's coding agent, also different).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Category note</div><div class="v">More product than framework — fits here as Hermes's closest peer</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Local autonomous agent with broad messaging reach</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://openclaws.io">openclaws.io</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

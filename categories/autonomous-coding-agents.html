@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous Coding Agents — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Autonomous Coding Agents</div>
+  <h1>Autonomous Coding Agents</h1>
+  <p class="lead">One step past the "editor with AI" category: these tools plan, write, run, test, and sometimes ship code with minimal human intervention. Some live in your terminal, some in your browser, some in a cloud VM. They differ mostly in how much autonomy the user actually grants them.</p>
+
+  <div class="note"><strong>The axis that matters.</strong> "Local + interactive" (Claude Code, Aider, Cline) vs. "cloud + async" (Devin, Jules, Codex Cloud). Local keeps the human in the loop; cloud is closer to "assign a ticket and come back in 20 minutes."</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="claude-code">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Claude Code"></div>
+        <div class="comp-title">
+          <h3>Claude Code</h3>
+          <div class="maker">Anthropic · launched Feb 2025</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Terminal-first</span><span class="tag">Frontier</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Anthropic's official CLI coding agent. Lives in your terminal, reads your repo, plans, edits files, runs commands, and iterates — all through a single Claude loop with a simple tool set (Read, Edit, Bash, Grep, etc.). Also ships as a desktop app, web app (claude.ai/code), and IDE extensions (VS Code, JetBrains).</p>
+        <p><strong>What sets it apart.</strong> The "single loop + simple tools" architecture that PostHog and others now hold up as the ideal pattern. Hooks, slash commands, MCP support, agent SDK, and sub-agents are all first-class. Has become the de-facto reference implementation that every other agent is measured against.</p>
+        <p><strong>Connections.</strong> Powered by Claude Sonnet / Opus. Same team ships the Claude Agent SDK (which lets you build your own agents on the same engine). Uses MCP (Anthropic's own spec) for external tools. Cited as inspiration by Windsurf Cascade, Cursor Agent mode, Amp, and Cognition's Jules-style products.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Default CLI agent for AI-native dev teams; millions of terminal sessions per month</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Included in Claude Pro / Max / API usage; $20–$200/mo tiers</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://claude.com/claude-code">claude.com/claude-code</a>
+          <a href="https://docs.claude.com/claude-code">Docs</a>
+          <a href="https://github.com/anthropics/claude-code">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="devin">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cognition.ai&sz=128" alt="Cognition"></div>
+        <div class="comp-title">
+          <h3>Devin</h3>
+          <div class="maker">Cognition Labs · founded 2023 · CEO Scott Wu</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Cloud async</span><span class="tag warn">Expensive</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> "The AI software engineer." Runs in a cloud VM with its own browser, terminal, and editor; you assign it tasks via Slack / web UI and it comes back with a PR. Positioned as a junior dev you hire, not a tool you drive.</p>
+        <p><strong>What sets it apart.</strong> Pioneered the "async cloud agent" category in March 2024 with a viral launch demo. Long-horizon planning and its own scaffolded workspace (browser + shell + IDE) set the template every cloud agent since has copied. Cognition also owns Windsurf now — pairing the IDE and the async agent.</p>
+        <p><strong>Connections.</strong> Raised at ~$4B valuation in 2024. Acquired Windsurf in 2025. Uses frontier models under the hood (primarily Claude). Controversial SWE-bench claims at launch led to the broader industry tightening eval standards.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Enterprise-heavy; "Devin Team" at $500/mo per seat + usage</div></div>
+          <div class="kv"><div class="k">Positioning</div><div class="v">Hire-an-engineer framing vs. Claude Code's drive-the-tool framing</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cognition.ai">cognition.ai</a>
+          <a href="https://devin.ai">devin.ai</a>
+          <a href="https://docs.devin.ai">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="jules">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Jules"></div>
+        <div class="comp-title">
+          <h3>Google Jules</h3>
+          <div class="maker">Google Labs</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Cloud async</span><span class="tag">GitHub-native</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google's async coding agent. You connect it to a GitHub repo; it clones to a Google Cloud VM, plans, writes code, runs tests, and opens a PR. Uses Gemini 2.5 Pro as the planner.</p>
+        <p><strong>What sets it apart.</strong> Free tier for Google accounts makes async-agent coding accessible to hobbyists, where Devin is gated behind enterprise pricing. Very clean GitHub PR integration.</p>
+        <p><strong>Connections.</strong> Part of Google's sprawling 2025 agent lineup (Antigravity for desktop, Jules for cloud, Opal for app-building, Firebase Studio for full-stack). Built on Gemini; competes directly with Claude Code + Devin.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Public beta 2024; general availability mid-2025; rapid hobbyist uptake</div></div>
+          <div class="kv"><div class="k">Sibling products</div><div class="v">Antigravity (desktop agent IDE), Opal (no-code agent builder)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://jules.google">jules.google</a>
+          <a href="https://labs.google">Google Labs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="codex">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI Codex"></div>
+        <div class="comp-title">
+          <h3>OpenAI Codex (CLI + Cloud)</h3>
+          <div class="maker">OpenAI</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Terminal + cloud</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> OpenAI's answer to Claude Code. Revived the "Codex" name (originally the 2021 GitHub Copilot model) as a new agentic coding product in 2025. Ships as a local CLI (mirroring Claude Code) and a cloud async mode (mirroring Devin / Jules).</p>
+        <p><strong>What sets it apart.</strong> Tight integration with ChatGPT subscriptions and the OpenAI Agents SDK. Runs on o-series reasoning models and GPT-5. Backed by OpenAI's massive consumer distribution.</p>
+        <p><strong>Connections.</strong> Shares a name but not a model lineage with the 2021 Codex. Pairs naturally with ChatGPT Team / Enterprise seats. OpenAI Agents SDK (formerly Swarm) is the framework version.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Rapidly adopted by ChatGPT Team subscribers; smaller mindshare than Claude Code in dev-tool circles</div></div>
+          <div class="kv"><div class="k">Launched</div><div class="v">Mid-2025; still catching up to Claude Code polish</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://openai.com/codex">openai.com/codex</a>
+          <a href="https://github.com/openai/codex">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="gemini-cli">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Gemini CLI"></div>
+        <div class="comp-title">
+          <h3>Gemini CLI</h3>
+          <div class="maker">Google · launched 2025</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Terminal-first</span><span class="tag good">Free tier</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google's answer to Claude Code / Codex CLI. A terminal coding agent that reads your repo, plans, edits files, and runs commands — all powered by Gemini 2.5 Pro (and now 3.1 Pro). Free tier with generous daily limits tied to a Google account.</p>
+        <p><strong>What sets it apart.</strong> Genuinely free for individuals at meaningful usage levels — a rare thing in this category. Tight MCP support, integrates with NotebookLM (you can give the agent a NotebookLM notebook as context). Preferred by cost-sensitive devs who don't need Claude's quality.</p>
+        <p><strong>Connections.</strong> Part of Google's 2025–2026 developer lineup (Jules for async, Antigravity for IDE, Gemini CLI for terminal). Uses the same Gemini API surface as Antigravity and Vertex AI.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Strong free-tier traction; smaller mindshare than Claude Code among pros</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free tier for individuals; paid via Vertex / AI Studio for higher usage</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://github.com/google-gemini/gemini-cli">GitHub</a>
+          <a href="https://ai.google.dev/gemini-api/docs">Gemini API docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="amp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=sourcegraph.com&sz=128" alt="Sourcegraph Amp"></div>
+        <div class="comp-title">
+          <h3>Amp</h3>
+          <div class="maker">Sourcegraph · CEO Quinn Slack</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Enterprise</span><span class="tag">VS Code + CLI</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Sourcegraph's coding agent. Ships as a VS Code extension and a CLI, built on Sourcegraph's deep code-search and code-intel infrastructure. Launched early 2025 after Sourcegraph sunset its earlier Cody product.</p>
+        <p><strong>What sets it apart.</strong> Massive-codebase expertise. Sourcegraph has indexed billions of lines for a decade, and Amp taps that structural knowledge for refactors and navigation that pure-LLM agents struggle with. The *How to Build an Agent* essay by Thorsten Ball (Amp engineer) is one of the most influential agent-design posts in the industry.</p>
+        <p><strong>Connections.</strong> Sourcegraph has deep Fortune-100 customer base (Stripe, Uber, Lyft, etc.). Amp is model-agnostic but heavily tuned for Claude.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Enterprise monorepo teams; quieter in startup circles than Cursor / Windsurf</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Best option for 10M+ LOC codebases</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://ampcode.com">ampcode.com</a>
+          <a href="https://ampcode.com/notes/how-to-build-an-agent/">How to Build an Agent</a>
+          <a href="https://sourcegraph.com">sourcegraph.com (parent)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="aider">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=aider.chat&sz=128" alt="Aider"></div>
+        <div class="comp-title">
+          <h3>Aider</h3>
+          <div class="maker">by Paul Gauthier · open source</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Terminal</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A scrappy open-source CLI coding agent that predated Claude Code by over a year (launched May 2023). Edits files in-place using a "diff-based" edit format, commits via git, and works with any LLM API.</p>
+        <p><strong>What sets it apart.</strong> Ran the most-cited open coding-agent benchmark ("Aider's polyglot benchmark") that drove model eval standards in 2023–2024. Genuinely model-agnostic — works with Claude, GPT, Gemini, DeepSeek, local Ollama, etc.</p>
+        <p><strong>Connections.</strong> Solo-developer project (Paul Gauthier). Pure Python, MIT-licensed. Widely copied by paid products; the pattern of "LLM emits a unified diff, CLI applies it, git tracks history" originates here.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~30K GitHub stars; default OSS choice before Claude Code</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free (pay only your model provider)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://aider.chat">aider.chat</a>
+          <a href="https://github.com/Aider-AI/aider">GitHub</a>
+          <a href="https://aider.chat/docs/leaderboards/">Leaderboard</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="cline">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cline.bot&sz=128" alt="Cline"></div>
+        <div class="comp-title">
+          <h3>Cline (and Roo Code)</h3>
+          <div class="maker">open source · VS Code extension</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">VS Code</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Open-source agentic coding extension for VS Code. Shows every action the agent takes with an approval step before edits / shell commands. Roo Code is a popular fork that's added extra features faster.</p>
+        <p><strong>What sets it apart.</strong> "Human-in-the-loop by default" is the core design choice — you see and approve each tool call. Appeals to developers burned by YOLO agents. Fully model-agnostic (Claude, OpenRouter, local).</p>
+        <p><strong>Connections.</strong> One of the most popular open-source VS Code AI extensions. Heavy Claude user in practice. Roo Code fork sometimes merges back, sometimes diverges — typical OSS drama.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hundreds of thousands of VS Code installs; top-10 in the marketplace AI section</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Developers who want agentic power but dislike Cursor's opacity</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cline.bot">cline.bot</a>
+          <a href="https://github.com/cline/cline">GitHub</a>
+          <a href="https://roocode.com">Roo Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="openhands">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=all-hands.dev&sz=128" alt="OpenHands"></div>
+        <div class="comp-title">
+          <h3>OpenHands</h3>
+          <div class="maker">All Hands AI · founded by Graham Neubig et al.</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Research-grade</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Formerly "OpenDevin" — a fully open-source take on the autonomous coding agent, originating in academia. Provides a sandboxed Docker environment where the agent runs code, browses, and edits. Also ships a cloud version.</p>
+        <p><strong>What sets it apart.</strong> Comes from researchers (CMU, et al.) with heavy contribution from the SWE-bench authors. Strongest open-source SWE-bench scores of any agent you can actually self-host. The reference if you want to study agent internals.</p>
+        <p><strong>Connections.</strong> Spinoff of academic work; corporate backer All Hands AI (Graham Neubig, CMU). SWE-bench (the benchmark) was designed by overlapping authors. Popular in research papers on agent capabilities.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~50K GitHub stars; widely referenced in academic agent research</div></div>
+          <div class="kv"><div class="k">Positioning</div><div class="v">"Open Devin" — reproducible, hackable, self-hostable</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://all-hands.dev">all-hands.dev</a>
+          <a href="https://github.com/All-Hands-AI/OpenHands">GitHub</a>
+          <a href="https://docs.all-hands.dev">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="openclaude">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="OpenClaude"></div>
+        <div class="comp-title">
+          <h3>OpenClaude</h3>
+          <div class="maker">Gitlawb · open source</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag">Multi-provider</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> An open-source fork of Claude Code's codebase, rebuilt to work with any provider: OpenAI, Gemini, DeepSeek, Ollama, Codex OAuth, GitHub Models, and 200+ models via any OpenAI-compatible endpoint. Keeps Claude Code's terminal-first workflow — prompts, tools, agents, MCP, slash commands, streaming — but frees you from the Claude-only assumption.</p>
+        <p><strong>What sets it apart.</strong> A "use any model you want" agent CLI with a Claude-Code-grade UX. Ships a VS Code extension for launch integration and a provider-aware control-center UI. Valuable if you want to experiment with open-weights or cheaper-per-token models without losing the Claude Code muscle memory.</p>
+        <p><strong>Connections.</strong> Originated from the Claude Code codebase and substantially modified. Fills the same niche Aider did pre-2024 — "model-agnostic CLI coding agent" — with a more modern scaffold. Sometimes confused with <em>OpenClaw</em> (a different tool: an autonomous personal assistant by Peter Steinberger). Also adjacent to <em>OpenCode</em> (opencode.ai), SST's open-source coding agent.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Growing OSS community; compared to Aider + Claude Code hybrids</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Developers who want Claude Code's UX but not the Anthropic lock-in</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://github.com/Gitlawb/openclaude">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deployment Platforms — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Deployment Platforms</div>
+  <h1>Deployment Platforms</h1>
+  <p class="lead">Where the web-app half of your AI product actually runs. These aren't AI-specific — they just happen to host 90%+ of new AI apps because they're the modern default for web deployment.</p>
+
+  <div class="comp-list">
+
+    <div class="comp" id="vercel">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=128" alt="Vercel"></div>
+        <div class="comp-title"><h3>Vercel</h3><div class="maker">Vercel · CEO Guillermo Rauch</div></div>
+        <div class="comp-tags"><span class="tag">Next.js</span><span class="tag">AI-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The deployment home for Next.js (which Vercel also makes). Handles serverless functions, edge compute, CDN, preview deploys, and now AI Gateway for routing LLM calls.</p>
+        <p><strong>What sets it apart.</strong> Tightest dev loop — git push → live URL in seconds. Shipped v0 (prompt-to-UI) + AI SDK + AI Gateway as a full AI-dev stack. Used by most AI-native startups by default.</p>
+        <p><strong>Connections.</strong> Makes Next.js, v0, AI SDK. Runs Claude Code's hosted web version. Primary deploy target for Bolt.new / Lovable / Replit outputs.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Millions of developers; dominant in JS/TS indie ecosystem</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Fastest dev-to-prod for front-end + serverless</div></div>
+        </div>
+        <div class="comp-links"><a href="https://vercel.com">vercel.com</a><a href="https://vercel.com/docs">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="netlify">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=netlify.com&sz=128" alt="Netlify"></div>
+        <div class="comp-title"><h3>Netlify</h3><div class="maker">Netlify · CEO Mathias Biilmann</div></div>
+        <div class="comp-tags"><span class="tag">JAMstack</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The original Jamstack platform. Static + serverless functions + forms + identity + edge functions. Pre-dates Vercel's current dominance; still strong in its core niche.</p>
+        <p><strong>What sets it apart.</strong> Framework-agnostic (where Vercel leans Next.js-heavy). Strong Stripe-like pricing clarity. Popular default for Bolt.new deploys.</p>
+        <p><strong>Connections.</strong> Ongoing fierce rivalry with Vercel. Acquired Gatsby in 2023.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~4M developers; strong in static-site / marketing-site world</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Framework-agnostic Jamstack</div></div>
+        </div>
+        <div class="comp-links"><a href="https://netlify.com">netlify.com</a><a href="https://docs.netlify.com">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="railway">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=railway.com&sz=128" alt="Railway"></div>
+        <div class="comp-title"><h3>Railway</h3><div class="maker">Railway · CEO Jake Cooper</div></div>
+        <div class="comp-tags"><span class="tag">PaaS</span><span class="tag">Indie-friendly</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Heroku-style PaaS. Deploy any language / framework / database from a git repo; Railway handles the infra. No "only Next.js" bias like Vercel.</p>
+        <p><strong>What sets it apart.</strong> Clean UX, fair pricing, polyglot out of the box — Python, Node, Go, Rust, Postgres, Redis, all one-click. Popular for AI back-ends and Discord bots.</p>
+        <p><strong>Connections.</strong> Spiritual successor to Heroku (after Salesforce hobbled Heroku's free tier). Often paired with Vercel (Next.js front, Railway back).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~1M developers; favorite for small teams with full-stack / Python back-ends</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Heroku-replacement; full-stack indie</div></div>
+        </div>
+        <div class="comp-links"><a href="https://railway.com">railway.com</a><a href="https://docs.railway.com">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="render">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=render.com&sz=128" alt="Render"></div>
+        <div class="comp-title"><h3>Render</h3><div class="maker">Render · CEO Anurag Goel</div></div>
+        <div class="comp-tags"><span class="tag">PaaS</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Direct Railway competitor. Same pitch — Heroku replacement, polyglot PaaS, git-push deploy. Slightly more enterprise-oriented.</p>
+        <p><strong>What sets it apart.</strong> Strong background workers + cron jobs story. Predictable pricing. Long track record.</p>
+        <p><strong>Connections.</strong> Often benchmarked head-to-head with Railway and Fly.io.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Widely adopted by small-to-mid teams</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Same as Railway — it's largely a preference split</div></div>
+        </div>
+        <div class="comp-links"><a href="https://render.com">render.com</a><a href="https://render.com/docs">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="fly">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=fly.io&sz=128" alt="Fly.io"></div>
+        <div class="comp-title"><h3>Fly.io</h3><div class="maker">Fly · CEO Kurt Mackey</div></div>
+        <div class="comp-tags"><span class="tag">Edge</span><span class="tag">Region-aware</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Runs full Docker containers (not just functions) at dozens of regions globally, with transparent region-based failover. Effectively edge-hosted Heroku.</p>
+        <p><strong>What sets it apart.</strong> Unique "run a full app globally" primitive — Phoenix/Elixir + Fly is a cult favorite combo. Good fit for globally distributed AI chatbots.</p>
+        <p><strong>Connections.</strong> Built heavily by ex-Heroku / Keen engineers. Popular among the Rails + Elixir crowd.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Smaller than Vercel/Netlify/Railway but deeply loved by its users</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Globally distributed, stateful app deployment</div></div>
+        </div>
+        <div class="comp-links"><a href="https://fly.io">fly.io</a><a href="https://fly.io/docs/">Docs</a></div>
+      </div>
+    </div>
+
+    <div class="comp" id="cloudflare-workers">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cloudflare.com&sz=128" alt="Cloudflare Workers"></div>
+        <div class="comp-title"><h3>Cloudflare Workers / Pages</h3><div class="maker">Cloudflare</div></div>
+        <div class="comp-tags"><span class="tag">Edge-serverless</span><span class="tag">Ultra-cheap</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Cloudflare's developer platform — Workers (V8-isolate serverless), Pages (static + Functions), R2 (S3-compatible object storage), D1 (SQLite), KV, Queues, Durable Objects.</p>
+        <p><strong>What sets it apart.</strong> Runs at Cloudflare's edge (~300 cities) with effectively-free cold starts. Most generous free tier in the industry. Durable Objects give you stateful serverless — a genuinely novel primitive.</p>
+        <p><strong>Connections.</strong> Cloudflare also ships Workers AI (see Cloud Platforms page). WebBot Auth protocol is co-developed with Anthropic.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Millions of Workers developers; growing AI-app share</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Ultra-low-latency edge serverless; cheapest free tier</div></div>
+        </div>
+        <div class="comp-links"><a href="https://workers.cloudflare.com">workers.cloudflare.com</a><a href="https://pages.cloudflare.com">Pages</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

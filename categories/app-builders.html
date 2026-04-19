@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Builders — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / App Builders</div>
+  <h1>App Builders (Prompt-to-App)</h1>
+  <p class="lead">Type a description, get a working web app. This category exploded in 2024–2025. The tools differ mainly on who the user is: designers (v0), non-engineers (Lovable, Base44), engineers wanting a sketch (Bolt.new), or existing Replit users (Replit Agent).</p>
+
+  <div class="note"><strong>Vibe-coding.</strong> Andrej Karpathy coined "vibe coding" (Feb 2025) to describe this workflow — you don't even read the code, you just steer the vibe. Half the category is defined by this meme.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="v0">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=128" alt="v0"></div>
+        <div class="comp-title">
+          <h3>v0</h3>
+          <div class="maker">Vercel · launched Oct 2023</div>
+        </div>
+        <div class="comp-tags"><span class="tag">React/Next.js</span><span class="tag">Design-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Vercel's prompt-to-UI tool. Describe a UI or paste a screenshot; get React + Tailwind + shadcn/ui code you can deploy to Vercel in one click. Has evolved from "generate a component" to "generate a full app."</p>
+        <p><strong>What sets it apart.</strong> Tightest integration with the Next.js + Vercel stack — the apps you build actually deploy cleanly. Output is idiomatic, modern React that professional devs can continue editing. Has its own model family ("v0-1.5") tuned for UI code.</p>
+        <p><strong>Connections.</strong> Vercel also makes the AI SDK and Next.js. Works seamlessly with shadcn/ui (Vercel's design system). Competes directly with Bolt.new and Lovable.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Millions of generations/month; a primary Vercel growth driver</div></div>
+          <div class="kv"><div class="k">Audience</div><div class="v">Designers + front-end devs who already know Vercel</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://v0.app">v0.app</a>
+          <a href="https://vercel.com">vercel.com (parent)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="bolt">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=stackblitz.com&sz=128" alt="Bolt.new"></div>
+        <div class="comp-title">
+          <h3>Bolt.new</h3>
+          <div class="maker">StackBlitz · CEO Eric Simons</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Full-stack</span><span class="tag">In-browser</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A full-stack app builder running entirely in your browser. StackBlitz built "WebContainers" — Node.js in WASM — which lets Bolt run a real dev server + npm install in-browser, not on a remote VM. Users prompt, Bolt generates and runs a full app.</p>
+        <p><strong>What sets it apart.</strong> No cloud VM = instant feedback loop, works offline-ish, no infrastructure cost per session. Went from $0 to $20M ARR in 2 months in late 2024 — one of the fastest SaaS ramps on record.</p>
+        <p><strong>Connections.</strong> Built on StackBlitz's decade-old WebContainer tech. Deploys to Netlify, Cloudflare, Vercel. Heavy Claude user under the hood.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Hit $40M+ ARR in first ~6 months; millions of apps generated</div></div>
+          <div class="kv"><div class="k">Tech moat</div><div class="v">WebContainers — the "Node-in-browser" nobody else has</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://bolt.new">bolt.new</a>
+          <a href="https://stackblitz.com">stackblitz.com (parent)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="lovable">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=128" alt="Lovable"></div>
+        <div class="comp-title">
+          <h3>Lovable</h3>
+          <div class="maker">Sweden · CEO Anton Osika</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Non-dev friendly</span><span class="tag">Europe</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> "GPT-Engineer for everyone." Web-based app builder targeting non-developers; Supabase is the default backend. Launched November 2024 and reached $17M ARR in 3 months — fastest European SaaS ever.</p>
+        <p><strong>What sets it apart.</strong> Best-in-class UX for non-technical founders. Clean integration with Supabase for auth + database. Aggressive social marketing made "built with Lovable" a meme on Twitter/X in 2025.</p>
+        <p><strong>Connections.</strong> Originated from the GPT-Engineer open-source project (also by Anton Osika). Deep Supabase partnership. Uses Claude heavily.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">$17M ARR in 3 months (Jan 2025); 500K+ users; ~$100M ARR by late 2025</div></div>
+          <div class="kv"><div class="k">Audience</div><div class="v">Non-technical founders and solopreneurs</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://lovable.dev">lovable.dev</a>
+          <a href="https://github.com/AntonOsika/gpt-engineer">GPT-Engineer (origin)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="replit">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=replit.com&sz=128" alt="Replit"></div>
+        <div class="comp-title">
+          <h3>Replit Agent</h3>
+          <div class="maker">Replit · CEO Amjad Masad</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Cloud IDE</span><span class="tag">Deployed in-place</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Replit's AI agent, launched 2024, now the front door to Replit. Describe an app; the agent scaffolds files, wires up a DB, and deploys to a live URL — all inside Replit's existing cloud IDE.</p>
+        <p><strong>What sets it apart.</strong> Unique position: Replit already had the IDE + hosting + DB integrated, so Agent is "just add AI" on top of a working product. Supports Python, Node, Go, Rust, etc. — most general-purpose of the app builders. "Replit Bounties" lets you outsource Agent tasks to humans if they get stuck.</p>
+        <p><strong>Connections.</strong> Replit predates the AI wave (founded 2016). Huge education user base. Uses Claude heavily.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~30M Replit users; Agent drove $100M+ ARR in 2024</div></div>
+          <div class="kv"><div class="k">Audience</div><div class="v">Existing Replit users, students, multi-language builders</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://replit.com">replit.com</a>
+          <a href="https://docs.replit.com/replitai/agent">Agent docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="firebase-studio">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=firebase.google.com&sz=128" alt="Firebase Studio"></div>
+        <div class="comp-title">
+          <h3>Firebase Studio</h3>
+          <div class="maker">Google · evolved from "Project IDX"</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Full-stack</span><span class="tag warn">Being sunset 2026</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google's prompt-to-app platform. Announced April 2025 (renaming Project IDX). Browser-based agentic dev environment that uses Gemini to scaffold full apps on Firebase + Google Cloud infra.</p>
+        <p><strong>What sets it apart.</strong> Native access to Firebase Auth, Firestore, Cloud Functions, Hosting — everything a web app needs. Google-grade free tier. Gemini 2.5 Pro as the agent planner.</p>
+        <p><strong>Status (April 2026).</strong> Google announced it is sunsetting Firebase Studio in favor of <a href="ai-code-editors.html#antigravity">Antigravity</a> + <a href="#ai-studio">Google AI Studio</a>'s merged "full-stack vibe coding" pipeline. You can still publish existing Firebase-Studio apps from Antigravity or AI Studio.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Status</div><div class="v">Sunsetting; use Antigravity + AI Studio instead</div></div>
+          <div class="kv"><div class="k">Legacy</div><div class="v">Successor to Project IDX; relative short shelf life</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://firebase.google.com/studio">firebase.google.com/studio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="ai-studio">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=aistudio.google.com&sz=128" alt="Google AI Studio"></div>
+        <div class="comp-title">
+          <h3>Google AI Studio</h3>
+          <div class="maker">Google</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Prompt + app</span><span class="tag">Gemini-native</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Originally Google's prompt-playground for the Gemini API; in 2026 it merged with Antigravity to become a full-stack "vibe coding" experience. Prototype a prompt in the browser, then hand it off to Antigravity's autonomous agents to build the app around it.</p>
+        <p><strong>What sets it apart.</strong> Tight seam between "play with the model" and "ship the app" — the handoff between prompt engineering and agent coding is smoother than any other tool. Free tier with Gemini 3.1 Pro preview access.</p>
+        <p><strong>Connections.</strong> Now effectively the front door to Google's developer stack: AI Studio → Antigravity → deploy. Replaces much of what Firebase Studio did.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Status</div><div class="v">Primary Google builder entry point as of 2026</div></div>
+          <div class="kv"><div class="k">Models</div><div class="v">Gemini 3.1 Pro preview + earlier Gemini generations</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://aistudio.google.com">aistudio.google.com</a>
+          <a href="https://blog.google/innovation-and-ai/technology/developers-tools/full-stack-vibe-coding-google-ai-studio/">Vibe-coding launch post</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="claude-design">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Claude Design"></div>
+        <div class="comp-title">
+          <h3>Claude Design</h3>
+          <div class="maker">Anthropic Labs · launched April 17, 2026</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Design-first</span><span class="tag">Opus 4.7</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A "prompt-to-prototype" tool that outputs polished visual work rather than running code: designs, prototypes, slides, one-pagers. During onboarding, Claude reads your codebase + existing design files to build a design system (colors, typography, components) that every later project reuses automatically. Exports to PDF, shareable URL, PPTX, or Canva.</p>
+        <p><strong>What sets it apart.</strong> Sits half-in the App Builders category: it makes visuals, not apps. But the codebase-aware design-system extraction is unique — other tools start from zero every time. Generates custom sliders tied to specific elements so non-designers can tweak visually. Figma's stock dropped 6.8% on announcement.</p>
+        <p><strong>Connections.</strong> Powered by Claude Opus 4.7. Research preview for Claude Pro / Max / Team / Enterprise subscribers. Adjacent to v0 (design-first code) but orthogonal: v0 ships React; Claude Design ships pixels.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Category note</div><div class="v">Design/prototype output, not app output — the closest existing fit on this map</div></div>
+          <div class="kv"><div class="k">Availability</div><div class="v">Research preview (paid Claude plans only)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://www.anthropic.com/news/claude-design-anthropic-labs">Launch post</a>
+          <a href="https://claude.ai">claude.ai</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="base44">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=base44.com&sz=128" alt="Base44"></div>
+        <div class="comp-title">
+          <h3>Base44</h3>
+          <div class="maker">founded by Maor Shlomo · Israel · acquired by Wix 2025</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Non-dev</span><span class="tag">Acquired</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> No-code AI app builder. Users describe an app in plain language; Base44 generates a working web app, auth, and DB. Acquired by Wix in mid-2025 for ~$80M after a ~$10M ARR ramp in months.</p>
+        <p><strong>What sets it apart.</strong> Even more tuned for "non-developer founder" than Lovable. Also notable as the first prominent solo-founder AI app-builder exit, proving the category can produce huge outcomes.</p>
+        <p><strong>Connections.</strong> Now part of Wix (site builder, ~300M users). Positioned as Wix's answer to the Lovable / Bolt wave.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~250K users at acquisition</div></div>
+          <div class="kv"><div class="k">Exit</div><div class="v">~$80M to Wix, mid-2025</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://base44.com">base44.com</a>
+          <a href="https://wix.com">wix.com (parent)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="opal">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Opal"></div>
+        <div class="comp-title">
+          <h3>Google Opal</h3>
+          <div class="maker">Google Labs</div>
+        </div>
+        <div class="comp-tags"><span class="tag">No-code</span><span class="tag">Experiment</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A no-code "AI mini-app builder" from Google Labs launched mid-2025. Lets you describe a small tool or workflow (image generator with specific styling, structured-output form, etc.) and get a shareable mini-app — somewhere between a ChatGPT GPT and a full web app.</p>
+        <p><strong>What sets it apart.</strong> Sits at a lighter tier than Firebase Studio — simpler mental model, not trying to build a full app. Targets the "I just want a branded AI thing I can share" user.</p>
+        <p><strong>Connections.</strong> Part of Google's 2025 AI builder stack (paired with Jules / Antigravity / Firebase Studio). Gemini-backed.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Early labs product; adoption still unclear</div></div>
+          <div class="kv"><div class="k">Positioning</div><div class="v">"ChatGPT GPTs, but from Google"</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://opal.withgoogle.com">opal.withgoogle.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

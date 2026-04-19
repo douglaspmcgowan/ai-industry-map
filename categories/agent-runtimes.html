@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Runtimes / Terminals — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Agent Runtimes / Terminals</div>
+  <h1>Agent Runtimes / Terminals</h1>
+  <p class="lead">A category that barely existed a year ago: terminals and environments purpose-built to <em>run</em> AI coding agents — Claude Code, Codex, Gemini CLI, Aider, OpenCode — rather than be them. Running one agent in a plain terminal is fine; running three in parallel exposes pain (which tab is waiting? which errored? which finished?) that these tools were built to fix.</p>
+
+  <div class="note"><strong>Windows vs macOS.</strong> cmux — the tool that defined this category in early 2026 — is macOS-only. Windows users have two real options: <strong>Warp</strong> (cross-platform, AI-first) or <strong>Wmux</strong> (Windows-native clone of cmux's multi-agent pattern). Both are covered below.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="cmux">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cmux.com&sz=128" alt="cmux"></div>
+        <div class="comp-title">
+          <h3>cmux</h3>
+          <div class="maker">manaflow-ai · launched Feb 2026 · AGPL</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open source</span><span class="tag warn">macOS only</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A native macOS terminal built on Ghostty's libghostty rendering engine, designed specifically for running multiple AI coding agents in parallel. Vertical tabs, per-tab status lights (green = done, yellow = waiting for input, red = error), notifications when an agent finishes, a built-in browser for previewing changes, and a scriptable CLI/socket API.</p>
+        <p><strong>What sets it apart.</strong> Defined the category. The status-light-per-tab metaphor is so obvious in hindsight that every subsequent "agent terminal" copied it. Free, open source, GPU-accelerated via Ghostty. Compatible with Claude Code, Codex, OpenCode, Gemini CLI, Kiro, Aider — any CLI tool.</p>
+        <p><strong>Connections.</strong> Built on Ghostty (Mitchell Hashimoto's GPU terminal). Hit 7.7K stars in its first month. Inspired <strong>Wmux</strong> (the Windows port) and <strong>Calyx</strong> (another Ghostty-based competitor on macOS).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Platform</div><div class="v">macOS 26+ only</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free forever (AGPL)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cmux.com">cmux.com</a>
+          <a href="https://github.com/manaflow-ai/cmux">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="wmux">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=mcpmarket.com&sz=128" alt="Wmux"></div>
+        <div class="comp-title">
+          <h3>Wmux</h3>
+          <div class="maker">Windows-native</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Windows</span><span class="tag">Multi-agent</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A Windows-first terminal multiplexer for AI coding agents. Orchestrate Claude Code, Codex, Gemini CLI across split terminals with smart notifications when an agent finishes or needs input. Ships with integrated browser automation via Chrome DevTools Protocol, so agents can drive a browser without a separate setup.</p>
+        <p><strong>What sets it apart.</strong> Basically "cmux for Windows" — same philosophy, different OS. The browser-automation integration is a genuine add-on: if you have agents that need to test a web UI, you don't have to glue Playwright in yourself.</p>
+        <p><strong>Connections.</strong> Aimed at the audience cmux explicitly excluded. The category's answer to "fine, but I'm on Windows."</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Platform</div><div class="v">Windows</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Windows devs running 2–5 agents in parallel</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://mcpmarket.com/server/wmux">mcpmarket.com/server/wmux</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="warp">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=warp.dev&sz=128" alt="Warp"></div>
+        <div class="comp-title">
+          <h3>Warp</h3>
+          <div class="maker">Warp · founded 2020 · CEO Zach Lloyd</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Cross-platform</span><span class="tag">AI-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A cross-platform (macOS / Linux / Windows) terminal rebuilt from scratch around AI. Inline agents that can plan, run, and review commands; block-based command history; collaborative sessions; integrated code editor. Not a dedicated "agent orchestrator" like cmux, but a full AI-native terminal that plays well with Claude Code and other CLIs.</p>
+        <p><strong>What sets it apart.</strong> The most polished AI terminal, period. The only tool in this category with real Windows support — if you're on Windows and want a single "nice" terminal instead of stacking Warp + cmux-likes, this is it. Paid tiers for teams.</p>
+        <p><strong>Connections.</strong> Predates the cmux-style category (Warp launched in 2022) and is now repositioned as "agent-first." Features Claude Code as a first-class integration on their site.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Platform</div><div class="v">macOS, Linux, Windows</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free tier; paid teams</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://www.warp.dev">warp.dev</a>
+          <a href="https://www.warp.dev/agents/claude-code">Warp + Claude Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="yaw">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=yaw.sh&sz=128" alt="Yaw"></div>
+        <div class="comp-title">
+          <h3>Yaw</h3>
+          <div class="maker">yaw.sh</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Claude Code–focused</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> A terminal purpose-built for Claude Code workflows. Watches for Claude Code launches and immediately opens a side-by-side layout: your AI agent on one side, a regular shell in the same project directory on the other.</p>
+        <p><strong>What sets it apart.</strong> Narrower than cmux (Claude Code specifically, not "any agent") but nicer if that's all you use. The auto-split-on-launch ergonomics remove a manual tmux step.</p>
+        <p><strong>Connections.</strong> Indie project. Part of the 2026 wave of "one terminal per agent type" experiments.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Niche</div><div class="v">Claude Code power users who want a dedicated UI</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://yaw.sh">yaw.sh</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="windows-terminal">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="Windows Terminal"></div>
+        <div class="comp-title">
+          <h3>Windows Terminal</h3>
+          <div class="maker">Microsoft · open source</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Windows</span><span class="tag">Baseline</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The default modern terminal on Windows 11. Tabs, split panes, scrollback, search, PowerShell + CMD + WSL in one window. No AI-specific features.</p>
+        <p><strong>What sets it apart.</strong> It's free, it's already installed, and it works fine for Claude Code / Codex / Aider. You have to set up split panes manually — there's no per-tab "agent status" indicator — but for a single agent at a time it's perfectly adequate.</p>
+        <p><strong>Connections.</strong> The sensible fallback if you don't want to evaluate Warp or Wmux yet. Combine with WSL2 + Ghostty if you want the GPU-accelerated experience cmux users get on macOS.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Platform</div><div class="v">Windows only</div></div>
+          <div class="kv"><div class="k">Cost</div><div class="v">Free</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://github.com/microsoft/terminal">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Google favicons.</footer>
+</body>
+</html>

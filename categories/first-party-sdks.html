@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First-Party Agent SDKs — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / First-Party Agent SDKs</div>
+  <h1>First-Party Agent SDKs</h1>
+  <p class="lead">In 2024–2025, every major model provider shipped its own "just use us directly" SDK, partly as a reaction to third-party frameworks feeling heavy. These are thin, minimal wrappers with tool calling, conversation loops, and sometimes MCP support — all blessed by the company that also makes the model.</p>
+  <div class="note"><strong>The PostHog take.</strong> These are the SDKs PostHog migrated <em>to</em> after their multi-year LangChain experiment. Lighter abstraction, fewer lock-in risks, and they track the underlying model's features (e.g., prompt caching, extended thinking) on day one.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="claude-sdk">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Claude Agent SDK"></div>
+        <div class="comp-title">
+          <h3>Claude Agent SDK</h3>
+          <div class="maker">Anthropic</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Anthropic-native</span><span class="tag good">MCP built-in</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The same engine that powers Claude Code, packaged as a library. Ships tools (read/write file, run command, web search), conversation loop, memory, permissions, hooks, and sub-agents out of the box. Python and TypeScript.</p>
+        <p><strong>What sets it apart.</strong> Tightest integration with MCP (Anthropic's spec, but now industry-standard). Extended Thinking, prompt caching, computer use, and other Claude-specific features all first-class. Uses the exact code that runs Claude Code — no "SDK vs reality" drift.</p>
+        <p><strong>Connections.</strong> Same team ships Claude Code and the Claude API. PostHog migrated to this from LangChain in late 2025.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Rapid uptake in 2025–2026; the default "just use Claude" framework</div></div>
+          <div class="kv"><div class="k">Docs</div><div class="v">code.claude.com/docs/en/agent-sdk/overview</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://code.claude.com/docs/en/agent-sdk/overview">Overview</a>
+          <a href="https://github.com/anthropics/claude-agent-sdk-python">GitHub (Python)</a>
+          <a href="https://github.com/anthropics/claude-agent-sdk-typescript">GitHub (TS)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="openai-agents">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI Agents SDK"></div>
+        <div class="comp-title">
+          <h3>OpenAI Agents SDK (formerly Swarm)</h3>
+          <div class="maker">OpenAI</div>
+        </div>
+        <div class="comp-tags"><span class="tag">OpenAI-native</span><span class="tag">Python + JS</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> OpenAI's official multi-agent orchestration library. Announced as "Swarm" (experimental) in 2024, promoted to "OpenAI Agents SDK" (production) in March 2025. Core primitives: Agents, Handoffs, Guardrails, Sessions.</p>
+        <p><strong>What sets it apart.</strong> Multi-agent handoffs are first-class (vs. Claude's single-loop emphasis). Deep integration with the OpenAI Responses API, built-in tools (web search, file search, computer use, code interpreter), and tracing. Runs Voice + MCP natively.</p>
+        <p><strong>Connections.</strong> Internally used to build ChatGPT agent mode and the OpenAI Codex cloud agent. Paired with OpenAI Traces UI for debugging.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Fast adoption among OpenAI-shop teams; alt to third-party frameworks for pure-OpenAI stacks</div></div>
+          <div class="kv"><div class="k">Philosophy</div><div class="v">Multi-agent by default — explicit contrast with Anthropic's single-loop</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://openai.github.io/openai-agents-python/">Docs</a>
+          <a href="https://github.com/openai/openai-agents-python">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="google-adk">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Google ADK"></div>
+        <div class="comp-title">
+          <h3>Google Agent Development Kit (ADK)</h3>
+          <div class="maker">Google · launched April 2025</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Gemini-native</span><span class="tag">Python + Java</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google's official framework for building agents on Gemini. Primitives include Agent, Tool, Runner, Session. Integrates with Vertex AI Agent Engine for managed deployment.</p>
+        <p><strong>What sets it apart.</strong> Ships an "A2A" (Agent-to-Agent) protocol alongside it — Google's answer to cross-framework agent communication. Works with any LLM via LiteLLM, not just Gemini (though Gemini is home).</p>
+        <p><strong>Connections.</strong> Pairs with Vertex AI (managed agent hosting) and Google's AgentSpace product. Gemini-optimized but provider-agnostic.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Newest of the first-party SDKs; fast traction inside Google Cloud</div></div>
+          <div class="kv"><div class="k">Philosophy</div><div class="v">Multi-agent + cross-vendor (A2A protocol)</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://google.github.io/adk-docs/">Docs</a>
+          <a href="https://github.com/google/adk-python">GitHub</a>
+          <a href="https://a2aprotocol.ai">A2A protocol</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="vercel-ai-sdk">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=128" alt="Vercel AI SDK"></div>
+        <div class="comp-title">
+          <h3>Vercel AI SDK</h3>
+          <div class="maker">Vercel</div>
+        </div>
+        <div class="comp-tags"><span class="tag">TypeScript</span><span class="tag">UI-aware</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> TypeScript SDK for building AI features in web apps. Unified API across OpenAI, Anthropic, Google, and 30+ other providers. Handles streaming, tool calling, structured outputs, and React-first UI streaming (RSC, useChat, useCompletion).</p>
+        <p><strong>What sets it apart.</strong> Not strictly "first-party" to any model, but it's the default "model-agnostic thin wrapper" for the JS/TS world. Built-in React hooks. Tight Next.js / Vercel integration. "Agents" primitive added 2025.</p>
+        <p><strong>Connections.</strong> Maintained by the same Vercel team behind Next.js, v0, and the Fluid / AI Gateway infra. Handles routing between providers via Vercel's AI Gateway.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">De-facto TypeScript choice; 500K+ npm weekly downloads</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Real-time UI streaming (React Server Components) is best-in-class</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://ai-sdk.dev">ai-sdk.dev</a>
+          <a href="https://github.com/vercel/ai">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="mistral-agents">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=128" alt="Mistral Agents API"></div>
+        <div class="comp-title">
+          <h3>Mistral Agents API</h3>
+          <div class="maker">Mistral</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Mistral-native</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Mistral's managed agents layer on top of their models. Ships built-in tools (code interpreter, web search, image gen, document library) and agent hand-offs. Announced May 2025.</p>
+        <p><strong>What sets it apart.</strong> European sovereign-AI deployment option — enterprise customers worried about US / Chinese data policy. Batteries-included built-in tools mean you don't need to wire up your own search / sandboxes.</p>
+        <p><strong>Connections.</strong> Pairs with Le Chat (consumer front-end) and Le Platforme (developer console). Works with Mistral Large, Codestral, etc.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Still smaller than OpenAI / Anthropic SDKs; concentrated in EU</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">EU-regulated, sovereign-AI workloads</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://docs.mistral.ai/agents">docs.mistral.ai/agents</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Providers — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../visualizations.html">Visualizations</a>
+    <a href="../references.html">References</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / LLM Providers</div>
+  <h1>LLM Providers</h1>
+  <p class="lead">The "brains" of the industry. These are the companies training and serving the large language models that every other tool on this map plugs into. Providers compete on raw capability (reasoning, coding, long context), price, latency, and alignment / safety posture.</p>
+
+  <div class="note"><strong>How to read this.</strong> The big three (OpenAI, Anthropic, Google) dominate frontier capability. Meta and Mistral anchor the open-weights market. xAI and Cohere are specialist challengers. DeepSeek and Qwen represent the Chinese frontier — fully open weights, serious capability, increasingly competitive pricing.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="openai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI"></div>
+        <div class="comp-title">
+          <h3>OpenAI</h3>
+          <div class="maker">Founded 2015 · San Francisco · CEO Sam Altman</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Frontier</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> The company that kicked off the modern wave with GPT-3 and ChatGPT. Current flagship family is GPT-5 (general) and the o-series reasoning models (o3, o4-mini). Also ships Sora for video, DALL-E 3 for images, Whisper for speech, and the Agents SDK / Swarm for orchestration.</p>
+        <p><strong>What sets it apart.</strong> Strongest brand recognition and the largest consumer surface (ChatGPT reportedly ~800M weekly active users). Deep Microsoft partnership puts GPT models natively inside Azure, Office, and GitHub Copilot. Ships features fastest — Operator, Deep Research, Canvas, Projects — then competitors catch up.</p>
+        <p><strong>Connections.</strong> Microsoft is investor and exclusive Azure partner. GitHub (Microsoft) ships Copilot on top of GPT. Apple Intelligence uses ChatGPT as the fallback LLM in iOS. Anthropic was founded by ex-OpenAI people (Dario & Daniela Amodei, Jared Kaplan, Tom Brown).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">~800M weekly ChatGPT users; majority of Fortune 500 use via Azure OpenAI</div></div>
+          <div class="kv"><div class="k">Revenue (est.)</div><div class="v">~$12B+ ARR as of late 2025</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://openai.com">openai.com</a>
+          <a href="https://platform.openai.com/docs">API docs</a>
+          <a href="https://github.com/openai">GitHub</a>
+          <a href="https://openai.com/research">Research blog</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="anthropic">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic"></div>
+        <div class="comp-title">
+          <h3>Anthropic</h3>
+          <div class="maker">Founded 2021 · San Francisco · CEO Dario Amodei</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Frontier</span><span class="tag good">Safety-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Maker of the Claude model family — Opus (most capable), Sonnet (balanced), Haiku (fast/cheap). Ships Claude Code (CLI coding agent), the Claude Agent SDK, and the Model Context Protocol (MCP), which has become the de-facto standard for connecting tools to AI.</p>
+        <p><strong>What sets it apart.</strong> Widely considered the strongest coding model for agentic work — Claude Sonnet 4.5 / 4.6 and Opus 4.6 are what PostHog, Cursor, Windsurf, Replit, Cognition, and Amp actually ship on top of. Constitutional AI / RLAIF approach. Invented MCP (now adopted by OpenAI, Google, and the open-source world).</p>
+        <p><strong>Connections.</strong> Amazon is largest investor; Claude runs natively on AWS Bedrock. Google also invested. Founded by former OpenAI researchers (Dario, Daniela, Jared Kaplan, Tom Brown). Claude Code is the scaffolding Claude.ai terminal sessions run on.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Dominant in coding-agent market share; Claude Code used by most AI-native dev teams</div></div>
+          <div class="kv"><div class="k">Revenue (est.)</div><div class="v">~$5B+ ARR as of late 2025, growing fastest among frontier labs</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://anthropic.com">anthropic.com</a>
+          <a href="https://docs.anthropic.com">API docs</a>
+          <a href="https://anthropic.com/engineering/building-effective-agents">Building Effective Agents</a>
+          <a href="https://modelcontextprotocol.io">MCP spec</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="google">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Google"></div>
+        <div class="comp-title">
+          <h3>Google DeepMind</h3>
+          <div class="maker">Alphabet · CEO Demis Hassabis (DeepMind) / Sundar Pichai (Alphabet)</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Frontier</span><span class="tag">Multimodal</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Makers of the Gemini family — Gemini 2.5 Pro (frontier), Flash (fast), Nano (on-device). Also ships Veo (video), Imagen (images), Lyria (audio), Gemma (open weights), and now a sprawling agent/app-builder lineup: Jules, Antigravity, Opal, Firebase Studio, NotebookLM, and Vertex AI.</p>
+        <p><strong>What sets it apart.</strong> Native multimodality (text+image+video+audio) beats most rivals. 1M+ token context window is industry-leading. Runs on Google's own TPUs — massive cost advantage at scale. Gemini is baked into Search, Workspace, Android, and Chrome (billions of users).</p>
+        <p><strong>Connections.</strong> Owns YouTube (huge training-data moat for video). Invested in Anthropic (~$2B). DeepMind (absorbed 2014) is the research engine. Gemma is the open-weights cousin — runs inside Ollama, LM Studio, etc.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Gemini in Search touches billions; Workspace AI rollout ongoing</div></div>
+          <div class="kv"><div class="k">Strengths</div><div class="v">Long context, multimodal, TPU cost; weakest on agentic coding vs Claude</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://deepmind.google">deepmind.google</a>
+          <a href="https://ai.google.dev">AI Studio / API</a>
+          <a href="https://cloud.google.com/vertex-ai">Vertex AI</a>
+          <a href="https://github.com/google-deepmind">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="meta">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=meta.com&sz=128" alt="Meta"></div>
+        <div class="comp-title">
+          <h3>Meta (Llama)</h3>
+          <div class="maker">Menlo Park · Chief AI Scientist Yann LeCun</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open weights</span><span class="tag">Frontier-ish</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Home of Llama — the most downloaded open-weights LLM family. Llama 3.1 405B, Llama 3.3 70B, Llama 4 Behemoth/Maverick/Scout are Meta's current stack. Llama powers Meta AI (in Instagram, WhatsApp, Facebook) and is the default base model for a huge share of open-source fine-tunes.</p>
+        <p><strong>What sets it apart.</strong> Open weights under a permissive (but commercial-restricted) license. Zuckerberg's bet: commoditize the models so Meta benefits from a cheap open ecosystem instead of paying a frontier-lab tax. Llama is what most "open" hosts (Together, Fireworks, Groq, Cerebras) run by default.</p>
+        <p><strong>Connections.</strong> Training uses Meta's own ~350K+ H100 fleet. PyTorch (also Meta) is the framework the entire AI world trains on. Distilled / fine-tuned Llamas power countless downstream products — Perplexity, Character.ai (partially), DeepSeek's early work, etc.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Meta AI reportedly 1B+ monthly users across apps; Llama the most-downloaded open LLM</div></div>
+          <div class="kv"><div class="k">Trade-off</div><div class="v">Weights open, training data and RL details aren't — "open weights" not "open source"</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://llama.com">llama.com</a>
+          <a href="https://ai.meta.com">ai.meta.com</a>
+          <a href="https://github.com/meta-llama">GitHub</a>
+          <a href="https://huggingface.co/meta-llama">HuggingFace</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="mistral">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=128" alt="Mistral"></div>
+        <div class="comp-title">
+          <h3>Mistral AI</h3>
+          <div class="maker">Founded 2023 · Paris · CEO Arthur Mensch</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open weights</span><span class="tag">Europe</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Europe's flagship LLM lab. Ships both open-weights models (Mistral 7B, Mixtral 8x22B, Mistral Small/Nemo) and proprietary frontier models (Mistral Large, Codestral, Pixtral multimodal). Also offers Le Chat (consumer chat product) and a growing Agents API.</p>
+        <p><strong>What sets it apart.</strong> Founded by ex-DeepMind and ex-Meta researchers; pioneered sparse Mixture-of-Experts (Mixtral) and fast, efficient small models that punch above their weight. The sovereign-EU-AI story matters to European governments and enterprises worried about US / Chinese data policy.</p>
+        <p><strong>Connections.</strong> Strategic partnership with Microsoft (Azure hosts Mistral Large). Big contracts with French government and BNP Paribas. Models run on every major host (Together, Fireworks, Hugging Face).</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Popular open-weights choice in Europe; Codestral a dev favorite for local coding</div></div>
+          <div class="kv"><div class="k">Positioning</div><div class="v">Sovereign-AI champion; "the OpenAI of Europe"</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://mistral.ai">mistral.ai</a>
+          <a href="https://docs.mistral.ai">API docs</a>
+          <a href="https://github.com/mistralai">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="xai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=x.ai&sz=128" alt="xAI"></div>
+        <div class="comp-title">
+          <h3>xAI</h3>
+          <div class="maker">Founded 2023 · San Francisco · CEO Elon Musk</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Frontier</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Maker of the Grok model family. Grok 3 (late 2024) and Grok 4 (2025) pushed into frontier territory thanks to the Colossus supercluster in Memphis (~200K+ H100s, largest training cluster ever built). Ships via grok.com, the X (Twitter) app, and an API.</p>
+        <p><strong>What sets it apart.</strong> Real-time data access via X's firehose — unique moat vs. anyone not training on a live social graph. Raw training compute is the sheer scale play. Positioning is deliberately edgier / less "aligned" than OpenAI or Anthropic, which draws both fans and critics.</p>
+        <p><strong>Connections.</strong> Owned by Elon Musk (also Tesla, X, Neuralink, SpaceX). Sibling company X provides data and distribution. Musk co-founded OpenAI in 2015 and left in 2018; xAI is in ongoing legal fights with OpenAI.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Built into X (Twitter) for 500M+ users; enterprise API growing</div></div>
+          <div class="kv"><div class="k">Compute</div><div class="v">Colossus: largest single training cluster on Earth as of 2025</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://x.ai">x.ai</a>
+          <a href="https://docs.x.ai">API docs</a>
+          <a href="https://grok.com">grok.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="cohere">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cohere.com&sz=128" alt="Cohere"></div>
+        <div class="comp-title">
+          <h3>Cohere</h3>
+          <div class="maker">Founded 2019 · Toronto · CEO Aidan Gomez</div>
+        </div>
+        <div class="comp-tags"><span class="tag">Closed</span><span class="tag">Enterprise</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Enterprise-focused LLM provider. Ships the Command family (Command R, Command R+), Embed (the gold-standard enterprise embedding models), and Rerank. Private-deployment-first — customers can run Cohere models inside their own VPC or even on-prem.</p>
+        <p><strong>What sets it apart.</strong> Deep enterprise RAG expertise — Cohere Embed / Rerank are what many production RAG pipelines use even when the generation model is from OpenAI or Anthropic. Quiet competence; rarely chases the consumer-chat hype cycle.</p>
+        <p><strong>Connections.</strong> Aidan Gomez was a co-author of "Attention Is All You Need" (the original Transformer paper). Major investors: Nvidia, Salesforce, Oracle. Tight partnerships with Oracle Cloud and Fujitsu for regulated-industry deployments.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Concentrated in banking, healthcare, gov — fewer users than consumer labs, but high contract sizes</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">"The RAG and enterprise-private-deployment provider"</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cohere.com">cohere.com</a>
+          <a href="https://docs.cohere.com">API docs</a>
+          <a href="https://github.com/cohere-ai">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="deepseek">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt="DeepSeek"></div>
+        <div class="comp-title">
+          <h3>DeepSeek</h3>
+          <div class="maker">Founded 2023 · Hangzhou, China · parent: High-Flyer hedge fund</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open weights</span><span class="tag">China</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Chinese research lab that shocked the industry in early 2025 by releasing DeepSeek-V3 and the R1 reasoning model with fully open weights and costs dramatically below Western frontier labs. Ships V3, R1, and the Coder family.</p>
+        <p><strong>What sets it apart.</strong> Reasoning-model quality at a fraction of OpenAI / Anthropic prices. Full model weights, training recipe, and papers released publicly — a major change in the competitive landscape. "DeepSeek moment" (Jan 2025) crashed Nvidia stock ~17% in a single day on efficiency fears.</p>
+        <p><strong>Connections.</strong> Funded by High-Flyer, a Chinese quant hedge fund. Export-control pressure means DeepSeek had to be clever about training efficiency on restricted Nvidia H800s. Widely hosted by Together, Fireworks, Groq; runs locally via Ollama / LM Studio.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Most-hosted open reasoning model outside Llama; millions of downloads</div></div>
+          <div class="kv"><div class="k">Caveat</div><div class="v">Data-governance concerns for Western enterprises; API hosted in China</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://deepseek.com">deepseek.com</a>
+          <a href="https://github.com/deepseek-ai">GitHub</a>
+          <a href="https://huggingface.co/deepseek-ai">HuggingFace</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="qwen">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=alibaba.com&sz=128" alt="Alibaba"></div>
+        <div class="comp-title">
+          <h3>Alibaba Qwen</h3>
+          <div class="maker">Alibaba Cloud · Hangzhou, China</div>
+        </div>
+        <div class="comp-tags"><span class="tag good">Open weights</span><span class="tag">China</span><span class="tag">Multimodal</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Alibaba's LLM family. Qwen 2.5 and Qwen 3 cover sizes from 0.5B to 72B+ parameters, with specialist variants for coding (Qwen-Coder), math (Qwen-Math), and vision (Qwen-VL). Fully open weights for most sizes.</p>
+        <p><strong>What sets it apart.</strong> Huge depth of model sizes and specializations under a permissive license. Consistently tops open-weights leaderboards in Chinese and non-English benchmarks. Qwen-VL is a top open multimodal model.</p>
+        <p><strong>Connections.</strong> Backed by Alibaba Cloud infrastructure. Popular base model for international fine-tunes (many Hugging Face leaderboard winners are Qwen-based). Available via Alibaba Cloud's Model Studio, Together, Fireworks, and locally.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Dominant open-weights model in China; growing internationally, especially for multilingual</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Best open-weights option for non-English tasks and for coding at the small-model tier</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://qwenlm.ai">qwenlm.ai</a>
+          <a href="https://github.com/QwenLM">GitHub</a>
+          <a href="https://huggingface.co/Qwen">HuggingFace</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

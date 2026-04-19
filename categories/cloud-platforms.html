@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud AI Platforms — AI Industry Map</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav><a href="../index.html">Home</a><a href="../visualizations.html">Visualizations</a><a href="../references.html">References</a></nav>
+</header>
+<div class="container">
+  <div class="crumb"><a href="../index.html">Home</a> / Cloud AI Platforms</div>
+  <h1>Cloud AI Platforms</h1>
+  <p class="lead">The hyperscalers' bundled AI offerings. Each one packages model hosting, agents, vector DBs, fine-tuning, and deployment into a single managed suite — convenient, enterprise-friendly, and deeply locked-in to their cloud.</p>
+  <div class="note"><strong>The play.</strong> Enterprises with existing AWS/Azure/GCP contracts tend to use these by default because procurement, security review, and billing already exist. The trade-off: you pay a markup over running the models directly.</div>
+
+  <div class="comp-list">
+
+    <div class="comp" id="bedrock">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128" alt="AWS Bedrock"></div>
+        <div class="comp-title"><h3>AWS Bedrock</h3><div class="maker">Amazon · launched 2023</div></div>
+        <div class="comp-tags"><span class="tag">Enterprise</span><span class="tag">Multi-model</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> AWS's managed LLM service. Hosts Claude (Anthropic), Llama (Meta), Mistral, Cohere, Amazon Titan, Amazon Nova, Stability, and others — all through a single AWS API. Ships Bedrock Agents, Bedrock Knowledge Bases (RAG), and AgentCore for agent infra.</p>
+        <p><strong>What sets it apart.</strong> Claude runs natively here (Amazon is Anthropic's largest investor). Deepest enterprise compliance surface — FedRAMP High, IL5, HIPAA, everything. Most neutral of the three clouds — doesn't push its own models as hard.</p>
+        <p><strong>Connections.</strong> Amazon invested ~$8B in Anthropic; Claude is the flagship Bedrock model. Competes with Azure OpenAI and Vertex AI.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Dominant among AWS-first enterprises; grew ~5x in 2024</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Widest model selection, including Claude and Llama natively</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://aws.amazon.com/bedrock/">aws.amazon.com/bedrock</a>
+          <a href="https://docs.aws.amazon.com/bedrock/">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="azure-foundry">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="Azure AI Foundry"></div>
+        <div class="comp-title"><h3>Azure AI Foundry (ex-Azure OpenAI)</h3><div class="maker">Microsoft</div></div>
+        <div class="comp-tags"><span class="tag">Enterprise</span><span class="tag">OpenAI-primary</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Microsoft's unified AI platform (renamed from Azure OpenAI Service in late 2024). Primary home for OpenAI models outside openai.com itself, plus Llama, Mistral, DeepSeek, and Microsoft's own Phi models. Includes AI Foundry Agent Service, Azure AI Search (vector DB), and Copilot Studio.</p>
+        <p><strong>What sets it apart.</strong> Exclusive early access to OpenAI models for Microsoft customers (Microsoft is OpenAI's exclusive cloud partner). Tightest integration with Microsoft 365, Teams, Dynamics, and Power Platform — if you live in the Microsoft world, this is the default.</p>
+        <p><strong>Connections.</strong> OpenAI is the flagship provider. Copilot Studio is Microsoft's low-code agent builder on top. Microsoft has invested ~$13B in OpenAI.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Largest enterprise LLM deployment footprint globally; most Fortune 500 are on Azure AI</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">OpenAI exclusivity + M365 integration</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://azure.microsoft.com/en-us/products/ai-foundry">azure.microsoft.com/ai-foundry</a>
+          <a href="https://learn.microsoft.com/azure/ai-foundry/">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="vertex">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cloud.google.com&sz=128" alt="Vertex AI"></div>
+        <div class="comp-title"><h3>Google Vertex AI</h3><div class="maker">Google Cloud</div></div>
+        <div class="comp-tags"><span class="tag">Enterprise</span><span class="tag">Gemini-first</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Google Cloud's managed ML + GenAI platform. Hosts Gemini, Claude (via partnership), Llama, Mistral, and a Model Garden of 100+ open models. Ships Vertex AI Agent Builder, Agent Engine, Agent Garden, and the AI Applications suite.</p>
+        <p><strong>What sets it apart.</strong> Only place (outside Anthropic directly) where you can get both Gemini and Claude through a unified enterprise contract. Deep integration with BigQuery — turning your warehouse into an AI substrate.</p>
+        <p><strong>Connections.</strong> Google also invested in Anthropic (~$2B). Gemini 2.5 Pro is the flagship. Google's ADK (agent SDK) is the first-party framework that lives here.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Strong in data-heavy enterprises (BigQuery shops); smaller share than AWS/Azure overall</div></div>
+          <div class="kv"><div class="k">Strength</div><div class="v">Gemini + Claude availability, BigQuery + Vertex AI joint story</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://cloud.google.com/vertex-ai">cloud.google.com/vertex-ai</a>
+          <a href="https://cloud.google.com/vertex-ai/docs">Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp" id="cloudflare-ai">
+      <div class="comp-head">
+        <div class="comp-logo"><img src="https://www.google.com/s2/favicons?domain=cloudflare.com&sz=128" alt="Cloudflare Workers AI"></div>
+        <div class="comp-title"><h3>Cloudflare Workers AI</h3><div class="maker">Cloudflare</div></div>
+        <div class="comp-tags"><span class="tag">Edge-first</span><span class="tag">Serverless</span></div>
+      </div>
+      <div class="comp-body">
+        <p><strong>What it is.</strong> Cloudflare's edge AI platform. Runs open-weights models (Llama, Mistral, Qwen, etc.) on Cloudflare's global network at millisecond latencies. Ships Workers (compute), AI Gateway (model routing), Vectorize (vector DB), and Agents SDK.</p>
+        <p><strong>What sets it apart.</strong> Lowest-latency inference anywhere thanks to edge deployment. Usage-based pricing with no idle cost — attractive vs. the hyperscalers for spiky workloads. Ecosystem plays well with Next.js / Hono / serverless stacks.</p>
+        <p><strong>Connections.</strong> Co-creator with Anthropic of the WebBot Auth protocol for agent authentication. Primary host for OpenAI's own edge-latency demos. Browserbase and other cloud-browser tools often run on Cloudflare infra.</p>
+        <div class="comp-meta">
+          <div class="kv"><div class="k">Usage</div><div class="v">Millions of Workers developers; AI side growing fast in 2025</div></div>
+          <div class="kv"><div class="k">Niche</div><div class="v">Edge / low-latency / serverless-first AI apps</div></div>
+        </div>
+        <div class="comp-links">
+          <a href="https://developers.cloudflare.com/workers-ai/">developers.cloudflare.com/workers-ai</a>
+          <a href="https://developers.cloudflare.com/agents/">Agents SDK</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="site">AI Industry Map — Logos via Clearbit.</footer>
+</body>
+</html>

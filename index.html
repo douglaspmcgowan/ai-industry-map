@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Industry Map — tools, platforms, and players</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="brand"><span class="accent">AI</span> Industry Map</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="visualizations.html">Visualizations</a>
+    <a href="references.html">References</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>AI Industry Map</h1>
+  <p class="lead">A guided tour of the tools, platforms, and companies that make up the generative-AI ecosystem — organized by what they actually <em>do</em>, not by buzzword. Click any category to see the top competitors, what sets each one apart, and how they connect to the rest.</p>
+
+  <div class="note"><strong>Scope.</strong> This focuses on tools builders touch day-to-day (models, editors, agents, frameworks, infra). It does <em>not</em> cover consumer chatbots, image/video generators, or research labs as labs — those get their own page later.</div>
+
+  <h2>Categories</h2>
+  <div class="cat-grid">
+
+    <a class="cat-card" href="categories/llm-providers.html">
+      <h3>LLM Providers</h3>
+      <p>Foundation models — the "brains" everything else plugs into. OpenAI, Anthropic, Google, Meta, Mistral, xAI, Cohere, DeepSeek, Qwen.</p>
+      <span class="count">9 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/ai-code-editors.html">
+      <h3>AI Code Editors</h3>
+      <p>IDEs where AI is stitched directly into your editor. Cursor, Windsurf, Antigravity, Copilot, Zed, JetBrains AI, Continue.</p>
+      <span class="count">7 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/autonomous-coding-agents.html">
+      <h3>Autonomous Coding Agents</h3>
+      <p>Agents that plan, edit, run tests, and ship — with less hand-holding. Claude Code, Devin, Jules, Codex, Gemini CLI, Amp, Cline, Aider, OpenHands, OpenClaude.</p>
+      <span class="count">10 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/agent-runtimes.html">
+      <h3>Agent Runtimes / Terminals</h3>
+      <p>Terminals built to run AI coding agents in parallel. cmux (macOS), Wmux (Windows), Warp (cross-platform), Yaw, Windows Terminal.</p>
+      <span class="count">5 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/app-builders.html">
+      <h3>App Builders</h3>
+      <p>Prompt-to-app and prompt-to-prototype tools. v0, Bolt.new, Lovable, Replit Agent, Base44, Firebase Studio, Opal, Google AI Studio, Claude Design.</p>
+      <span class="count">9 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/agent-frameworks.html">
+      <h3>Agent Frameworks</h3>
+      <p>Third-party libraries for orchestrating LLMs + tools. LangGraph, CrewAI, AutoGen, Pydantic AI, Mastra, LlamaIndex, Smolagents, Agno, Hermes, OpenClaw.</p>
+      <span class="count">10 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/first-party-sdks.html">
+      <h3>First-Party Agent SDKs</h3>
+      <p>SDKs from the model makers themselves. Claude Agent SDK, OpenAI Agents SDK, Google ADK, Vercel AI SDK, Mistral Agents API.</p>
+      <span class="count">5 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/mcp-ecosystem.html">
+      <h3>MCP Ecosystem</h3>
+      <p>Tools and registries built around the Model Context Protocol — the USB-C of AI. Smithery, MCP.so, Composio, Arcade, FastMCP.</p>
+      <span class="count">5 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/durable-execution.html">
+      <h3>Durable Execution</h3>
+      <p>Infra for long-running, crash-proof agent workflows. Temporal, Inngest, Restate, Trigger.dev, Hatchet, DBOS.</p>
+      <span class="count">6 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/cloud-platforms.html">
+      <h3>Cloud AI Platforms</h3>
+      <p>Hyperscalers' one-stop AI shops. AWS Bedrock, Azure AI Foundry, Google Vertex AI, Cloudflare AI.</p>
+      <span class="count">4 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/deployment-platforms.html">
+      <h3>Deployment Platforms</h3>
+      <p>Where the front-end of your AI app actually lives. Vercel, Netlify, Railway, Render, Fly.io, Cloudflare Workers.</p>
+      <span class="count">6 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/vector-dbs.html">
+      <h3>Vector Databases</h3>
+      <p>Storage for embeddings — powers semantic search and RAG. Pinecone, Weaviate, Qdrant, Chroma, Milvus, pgvector, Turbopuffer.</p>
+      <span class="count">7 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/ai-observability.html">
+      <h3>AI Observability & Evals</h3>
+      <p>Traces, evals, and dashboards for LLM apps. LangSmith, Langfuse, Helicone, Braintrust, Arize, PostHog LLM, Traceloop, W&B.</p>
+      <span class="count">8 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/model-hosting.html">
+      <h3>Model Hosting / Inference</h3>
+      <p>Run open-source and custom models at scale. Replicate, Together, Fireworks, Modal, Baseten, Groq, Cerebras, RunPod.</p>
+      <span class="count">8 competitors</span>
+    </a>
+
+    <a class="cat-card" href="categories/local-runners.html">
+      <h3>Local Model Runners</h3>
+      <p>Run LLMs on your own laptop or server. Ollama, LM Studio, llama.cpp, vLLM, MLX, Jan.</p>
+      <span class="count">6 competitors</span>
+    </a>
+
+  </div>
+
+  <h2>Visualizations & existing industry maps</h2>
+  <p>Want to see the whole thing as a mindmap, graph, or landscape poster? See <a href="visualizations.html">Visualizations</a> — it covers interactive-mindmap approaches you could build, plus existing industry maps (Matt Turck's MAD landscape, Menlo Ventures, Stack One, etc.) already online.</p>
+</div>
+
+<footer class="site">AI Industry Map — built as a living reference. Logos via Clearbit; info current as of April 2026.</footer>
+</body>
+</html>
